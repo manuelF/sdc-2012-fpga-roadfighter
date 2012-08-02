@@ -1,0 +1,11 @@
+programar y cargar a la placa en ise 10.1
+
+cargar el .bit normalmente
+
+luego no tocar bypass y cargar:
+
+C:/Xilinx/10.1/ISE/xcf/data/xcf04s.bsd
+
+y
+
+C:/Xilinx/10.1/ISE/xbr/data/xc2c64a.bsd
