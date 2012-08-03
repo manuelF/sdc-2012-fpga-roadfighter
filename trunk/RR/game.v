@@ -31,33 +31,45 @@ module game(
 	wire go_left, go_right;
 	db_fsm db1 ( .clk(clk), .reset(reset), .sw(left), .db(go_left) );
 	db_fsm db2 ( .clk(clk), .reset(reset), .sw(right), .db(go_right) );
-
-	wire upsig;
+	
+	wire upsig, upsig_fast;
 	universal_bin_counter #(.N(17)) updatesignal 
 		(.clk(clk), .reset(reset),
 		 .en(1'b1), .up(1'b1), .d(0), .syn_clr(1'b0),
 		 .load(1'b0), .max_tick(upsig),.min_tick(), .q()
 		);
 		
-	wire [19:0] counter;
-	localparam TOPE = 19'b1111111111111111111;
+	localparam TOPE = 17'b11111111111111111;
 	
-	universal_bin_counter #(.N(19)) updatesignal2 
-		(.clk(clk), .reset(reset),
-		 .en(1'b1), .up(1'b1), .d(0), .syn_clr(counter == TOPE),
-		 .load(1'b0), .max_tick(),.min_tick(), .q(counter)
-		);
-			
+	reg [17:0] upsig_fast_reg, upsig_fast_next;
+	always @(posedge clk, posedge reset)
+		if(reset)
+			begin
+				upsig_fast_reg <= 0;
+			end
+		else
+			begin
+				upsig_fast_reg <= upsig_fast_next;
+			end
+	always @*
+	begin
+		if(upsig_fast_reg > TOPE)
+			upsig_fast_next = 0;
+		else
+			upsig_fast_next = upsig_fast_reg+1;
+	end	
+	assign upsig_fast = upsig_fast_reg == TOPE;
+
 	wire run;
 	assign run = upsig & !colision;
 	
-	reg [2:0] rgb_reg,rgb_next,red_reg;
+	reg [2:0] red_reg;
 	wire [2:0] red_next,rgb_out;
 	
-	always@(posedge upsig, posedge reset)
+	always@(posedge clk, posedge reset)
 		if (reset)
 			red_reg <= 0;
-		else
+		else if(upsig)
 			red_reg <= red_next;
 			
 	assign red_next = {colision & ~red_reg, 2'b00};
@@ -65,17 +77,17 @@ module game(
 	assign rgb = rgb_out;
 	
 	localparam DROPRATE = 25;
-	localparam DROPSYNC = 25'b10110010101011110111110101;
+	localparam DROPSYNC = 25'b0110010101011110111110101;
 	reg [DROPRATE:0] drop_reg,drop_next;
 	
-	always @(posedge clk)
+	always @(posedge clk, posedge reset)
 		if(reset)
 			drop_reg <= 0;
 		else
 			drop_reg <= drop_next;
 	
 	always @*
-		if(drop_reg == DROPSYNC)
+		if(drop_reg > DROPSYNC)
 			drop_next = 0;
 		else
 			drop_next = drop_reg+1;
@@ -102,14 +114,14 @@ module game(
 				clk_counter_reg <= 0;
 				total_score_reg <= 0;				
 			end
-		else
+		else if(~colision)
 			begin
 				clk_counter_reg <= clk_counter_next;
 				total_score_reg <= total_score_next;
 			end
 		
 	always @*
-		if(clk_counter_reg == CLK)
+		if(clk_counter_reg > CLK)
 			begin
 				clk_counter_next = 0;
 				total_score_next = total_score_reg+1;
@@ -121,10 +133,9 @@ module game(
 			end
 	assign total_score = total_score_reg;
 	
-	main road_fighter (.clk(clk), .reset(reset), .upsig(run), .upsig_fast((counter == TOPE) & !colision),
+	main road_fighter (.clk(clk), .reset(reset), .upsig(run), .upsig_fast(upsig_fast & ~colision),
 				.drop((drop_reg == DROPSYNC) & ~colision & start_reg), .left(go_left), .right(go_right),
-				.hsync(hsync), .vsync(vsync), .rgb(rgb_out),
-				.colision(colision)
+				.hsync(hsync), .vsync(vsync), .rgb(rgb_out), .colision(colision)
 				);
 
 endmodule

@@ -21,8 +21,8 @@
 module background(
    input wire [9:0] pixel_x,
 	input wire [9:0] pixel_y,
-	output reg [2:0] rgb,
-	input wire clk, reset
+	input wire clk, reset, update_signal,
+	output reg [2:0] rgb
 	);
 		
 	localparam [2:0]
@@ -42,11 +42,11 @@ module background(
 		ROADMARK_YSTGAP = 42;
 	
 	reg [5:0] scroll_reg, scroll_next; 
-	always @(posedge clk)
+	always @(posedge clk, posedge reset)
 	begin
 		if( reset)
 			scroll_reg <= 0;
-		else
+		else if(update_signal)
 			scroll_reg <= scroll_next;
 	end
 

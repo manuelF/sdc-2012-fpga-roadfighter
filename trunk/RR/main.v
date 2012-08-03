@@ -55,7 +55,7 @@ module main(
 	wire on_player_car;
 	wire [2:0] rgb_car_player;
 
-	player p1 (.clk(upsig), .reset(reset), .left(left), .right(right), 
+	player p1 (.clk(clk), .update_signal(upsig), .reset(reset), .left(left), .right(right), 
 						.car_x(player_car_x), .car_y(player_car_y) );
 
 	graphic_car_controller p1_gcontroller (
@@ -106,7 +106,7 @@ module main(
 	// -------------------------------------------------------------------------
 	
 	wire [2:0] rgb_bg;
-	background bg (.pixel_x(pixel_x), .pixel_y(pixel_y), .rgb(rgb_bg), .clk(upsig_fast), .reset(reset));
+	background bg (.pixel_x(pixel_x), .pixel_y(pixel_y), .rgb(rgb_bg), .clk(clk), .update_signal(upsig_fast), .reset(reset));
 
 	graphic_controller gc (
 				.rgb(rgb_next),

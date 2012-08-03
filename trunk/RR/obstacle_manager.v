@@ -46,9 +46,11 @@ module obstacle_manager(
 	assign contar_next = contar +1;
 
 	reg [6:0] init_reg;	
-	always@ (posedge drop)
-		init_reg <= contar[26:20];
-	
+	always@ (posedge clk)
+	begin
+		if(drop)
+			init_reg <= contar[26:20];
+	end
 	assign initial_dbg = init_reg;
 
 /////////////////////////////////////////////////////////
