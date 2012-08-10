@@ -22,9 +22,10 @@ module game(
     input wire clk, reset,
 	 input wire left, right,
 	 input wire start,
+	 input wire rotary_a, rotary_b,
     output wire hsync, vsync,
     output wire [2:0] rgb,
-	 output wire colision,
+	 output wire colision,	 
 	 output wire [5:0] total_score
    );
 	
@@ -103,6 +104,7 @@ module game(
 
 	always @*
 		start_next = start_reg;
+
 		
 	localparam CLK = 50000000; //ceil(log(CLK)) = 26, por eso son 26 bits.
 	reg [25:0] clk_counter_reg, clk_counter_next;
@@ -114,7 +116,7 @@ module game(
 				clk_counter_reg <= 0;
 				total_score_reg <= 0;				
 			end
-		else if(~colision)
+		else if((~colision)&(start_reg))
 			begin
 				clk_counter_reg <= clk_counter_next;
 				total_score_reg <= total_score_next;
@@ -133,9 +135,47 @@ module game(
 			end
 	assign total_score = total_score_reg;
 	
+	
+	
+	reg go_left_rot=1'b0;
+	reg go_right_rot = 1'b0;
+	/*
+	Esto es codigo para usar la perilla, no es necesario descomentar si no se necesita
+	wire rotary_left, rotary_event;
+rotary_decode rotary (
+    .clk(clk), 
+    .rotary_a(rotary_a), 
+    .rotary_b(rotary_b), 
+    .rotary_event(rotary_event), 
+    .rotary_left(rotary_left)
+    );
+
+	
+	reg contar_reg, contar_next;
+	
+	always @(posedge clk,posedge reset)
+		if(reset)
+			contar_reg <= 0;
+		else 
+			if(rotary_event)
+			begin
+				contar_reg <= 1;
+				go_left_rot <= (~rotary_left);
+				go_right_rot <= (rotary_left);
+			end
+		else
+				contar_reg <= contar_next;
+
+	
+		*/
+	
 	main road_fighter (.clk(clk), .reset(reset), .upsig(run), .upsig_fast(upsig_fast & ~colision),
-				.drop((drop_reg == DROPSYNC) & ~colision & start_reg), .left(go_left), .right(go_right),
+				.drop((drop_reg == DROPSYNC) & ~colision & start_reg), 
+				.left(go_left | go_left_rot), .right(go_right | go_right_rot),				
+				
 				.hsync(hsync), .vsync(vsync), .rgb(rgb_out), .colision(colision)
 				);
+				
+				
 
 endmodule

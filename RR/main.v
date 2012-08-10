@@ -108,7 +108,7 @@ module main(
 	wire [2:0] rgb_bg;
 	background bg (.pixel_x(pixel_x), .pixel_y(pixel_y), .rgb(rgb_bg), .clk(clk), .update_signal(upsig_fast), .reset(reset));
 
-	graphic_controller gc (
+	graphic_controller #(7) gc (
 				.rgb(rgb_next),
 				.on_objs({
 					on_player_car,
