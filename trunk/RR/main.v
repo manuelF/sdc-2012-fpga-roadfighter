@@ -60,7 +60,7 @@ module main(
 
 	graphic_car_controller p1_gcontroller (
 					.car_position_x(player_car_x), .car_position_y(player_car_y), 
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(on_player_car), .rgb(rgb_car_player) );
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(on_player_car), .rgb(rgb_car_player),.owner(3'b000), .reset(reset), .pclk(upsig_fast));
 					
 	// -------------------------------------------------------------------------
 	
@@ -79,17 +79,17 @@ module main(
 	wire obs_0_visual_on, obs_1_visual_on, obs_2_visual_on, obs_3_visual_on, obs_4_visual_on, obs_5_visual_on;
 	
 	graphic_car_controller obs_0_gcont ( .car_position_x(obs_0_x), .car_position_y(obs_0_y),
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_0_visual_on), .rgb(rgb_obs_0) );
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_0_visual_on), .rgb(rgb_obs_0), .owner(3'b001), .reset(reset), .pclk(upsig_fast));
 	graphic_car_controller obs_1_gcont ( .car_position_x(obs_1_x), .car_position_y(obs_1_y),
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_1_visual_on), .rgb(rgb_obs_1) );
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_1_visual_on), .rgb(rgb_obs_1), .owner(3'b001), .reset(reset), .pclk(upsig_fast));
 	graphic_car_controller obs_2_gcont ( .car_position_x(obs_2_x), .car_position_y(obs_2_y),
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_2_visual_on), .rgb(rgb_obs_2) );
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_2_visual_on), .rgb(rgb_obs_2), .owner(3'b001), .reset(reset), .pclk(upsig_fast));
 	graphic_car_controller obs_3_gcont ( .car_position_x(obs_3_x), .car_position_y(obs_3_y),
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_3_visual_on), .rgb(rgb_obs_3) );
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_3_visual_on), .rgb(rgb_obs_3), .owner(3'b001), .reset(reset), .pclk(upsig_fast));
 	graphic_car_controller obs_4_gcont ( .car_position_x(obs_4_x), .car_position_y(obs_4_y),
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_4_visual_on), .rgb(rgb_obs_4) );
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_4_visual_on), .rgb(rgb_obs_4), .owner(3'b001), .reset(reset), .pclk(upsig_fast));
 	graphic_car_controller obs_5_gcont ( .car_position_x(obs_5_x), .car_position_y(obs_5_y),
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_5_visual_on), .rgb(rgb_obs_5) );
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_5_visual_on), .rgb(rgb_obs_5), .owner(3'b001), .reset(reset), .pclk(upsig_fast));
 
 	// -------------------------------------------------------------------------
 

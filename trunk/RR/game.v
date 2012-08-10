@@ -22,7 +22,6 @@ module game(
     input wire clk, reset,
 	 input wire left, right,
 	 input wire start,
-	 input wire rotary_a, rotary_b,
     output wire hsync, vsync,
     output wire [2:0] rgb,
 	 output wire colision,	 
