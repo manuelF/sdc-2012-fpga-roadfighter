@@ -24,9 +24,11 @@
 module graphic_car_controller(
 	input [7:0] car_position_x, 
 	input [9:0] car_position_y,
-	input [9:0] pixel_x, pixel_y,
+	input [9:0] pixel_x, pixel_y,	
 	output [2:0] rgb,
-	output wire on
+	output wire on,
+	input [2:0] owner,
+	input reset, input pclk
    );
 	
 	localparam 
@@ -47,8 +49,8 @@ module graphic_car_controller(
 	wire [3:0] local_pixel_x; // ancho 16
 	wire [4:0] local_pixel_y; // ancho 32
 	
-	assign right_bound = car_position_x + 16;
-	assign lower_bound = car_position_y + 32;
+	assign right_bound = car_position_x + CAR_WIDTH;
+	assign lower_bound = car_position_y + CAR_HEIGHT;
 	
 	assign local_pixel_x = pixel_x[7:0] - left_bound;
 	assign local_pixel_y = pixel_y - upper_bound;
@@ -72,7 +74,20 @@ module graphic_car_controller(
 
 	// output
 	reg [2:0] rgb_reg;
-	always @*
+	car_memory cm (
+    .xcoord(local_pixel_x), 
+    .ycoord(local_pixel_y), 
+    .car(owner), 
+    .Rx(rgb[2]), 
+    .Gx(rgb[1]), 
+    .Bx(rgb[0]),
+	 .reset(reset), .pclk(pclk)
+    );
+
+
+
+	//Dibuja el auto generico, luces amarillas, pintura roja, y dos bandas blancas
+	/*always @*
 	begin
 		if((local_pixel_x >= 6 && local_pixel_x <= 7) ||
 			(local_pixel_x >= 10 && local_pixel_x <= 11))
@@ -85,6 +100,7 @@ module graphic_car_controller(
 		else
 			rgb_reg = ROJO;
 	end
-	assign rgb[2:0] = rgb_reg; //3'b100;//car_draw[on && {local_pixel_y;local_pixel_x}];
 	
+	assign rgb[2:0] = rgb_reg; //3'b100;//car_draw[on && {local_pixel_y;local_pixel_x}];
+	*/
 endmodule

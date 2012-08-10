@@ -4,11 +4,11 @@ module letter_memory(
 
 	input [3:0] xcoord, ycoord,
 	input [4:0] letra,
-	input clk, Reset, pclk,
-	output R, G, B
+	input reset, pclk,
+//	input clk, Reset, pclk,	
+	output Rx, Gx, Bx
 	);
 	
-	reg R, G, B;
 	
 	localparam ROWS = 5;
 	localparam WIDTH = 5*3;
@@ -28,7 +28,8 @@ module letter_memory(
 	
 	
 	// Initialize
-	always @(posedge reset) begin
+	always @(posedge reset) 
+	begin
 			// Letra 0
 			letra0[0] = 15'b111000000000111;
 			letra0[1] = 15'b000111111111000;
@@ -101,6 +102,7 @@ module letter_memory(
 	end
 	
 	// Assign signals to proper outputs
+	reg R,G,B;
 	always @(posedge pclk) 
 	begin
 
@@ -129,5 +131,7 @@ module letter_memory(
 		G = letrarow[(xcoord*3)+1];
 		B = letrarow[(xcoord*3)+0];		
 	end
-	
+	assign Rx=R;
+	assign Gx=G;
+	assign Bx=B;
 endmodule
