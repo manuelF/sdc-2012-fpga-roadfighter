@@ -1,0 +1,19 @@
+Para programar la PROM,
+
+Impact  ->
+	->	Initialize Chain
+
+	->	Create PROM FILE -> 
+	
+	Step 1 -> Xilinx Flash  ->   [->]
+	Step 2 -> Storage Device XCF04S -> [Add Storage Device] ->   [->]
+	Step 3 -> Output File Name "RR" , [OK]
+
+Luego agregar "game.bit"
+Add another? "NO" -> Ok
+
+Luego volver al boundary scan
+
+Y en el XCF04S seleccionar el "RR.mcs" recien creado y programar ese device 
+
+Con esto ya la plaqueta se puede cargar desde PROM
