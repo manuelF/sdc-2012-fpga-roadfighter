@@ -35,8 +35,6 @@ module graphic_car_controller(
 		CAR_WIDTH = 16,
 		CAR_HEIGHT = 32;
 		
-	wire on_road = pixel_x[9:8] == 2'b01;
-	
 	wire [7:0] left_bound;
 	wire [9:0] upper_bound;
 
@@ -54,11 +52,9 @@ module graphic_car_controller(
 	
 	assign local_pixel_x = pixel_x[7:0] - left_bound;
 	assign local_pixel_y = pixel_y - upper_bound;
-	
-	assign on = on_road && ( 
-		right_bound >= pixel_x[7:0] && pixel_x[7:0] >= left_bound && 
-		pixel_y <= lower_bound && pixel_y >= upper_bound );
-	
+
+	wire on_road = pixel_x[9:8] == 2'b01;
+		
 	// block ram
 	//reg [3:0] car_draw [8:0]; //(3)*(16*32) [ = (3)*(2^5) ]
 
@@ -74,6 +70,26 @@ module graphic_car_controller(
 
 	// output
 	reg [2:0] rgb_reg;
+	wire[CAR_WIDTH*3 -1:0] car_line;
+	
+	//----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
+car_bitmap autito (
+  .clka(pclk), // input clka
+  .addra((owner*32)+local_pixel_y), // input [4 : 0] addra
+  .douta(car_line) // output [47 : 0] douta
+);
+// INST_TAG_END ------ End INSTANTIATION Template ---------
+
+	assign rgb[2]=car_line[local_pixel_x*3+2];
+	assign rgb[1]=car_line[local_pixel_x*3+1];
+	assign rgb[0]=car_line[local_pixel_x*3+0];
+
+	assign on = on_road && ( 
+		right_bound >= pixel_x[7:0] && pixel_x[7:0] >= left_bound && 
+		pixel_y <= lower_bound && pixel_y >= upper_bound ) && rgb != 3'b000;
+
+/*
+
 	car_memory cm (
     .xcoord(local_pixel_x), 
     .ycoord(local_pixel_y), 
@@ -84,7 +100,7 @@ module graphic_car_controller(
 	 .reset(reset), .pclk(pclk)
     );
 
-
+*/
 
 	//Dibuja el auto generico, luces amarillas, pintura roja, y dos bandas blancas
 	/*always @*

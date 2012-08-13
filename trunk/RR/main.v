@@ -58,10 +58,12 @@ module main(
 	player p1 (.clk(clk), .update_signal(upsig), .reset(reset), .left(left), .right(right), 
 						.car_x(player_car_x), .car_y(player_car_y) );
 
+	
+	
 	graphic_car_controller p1_gcontroller (
 					.car_position_x(player_car_x), .car_position_y(player_car_y), 
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(on_player_car), .rgb(rgb_car_player),.owner(3'b000), .reset(reset), .pclk(upsig_fast));
-					
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(on_player_car), .rgb(rgb_car_player),.owner(3'b000), .reset(reset), .pclk(clk));
+	
 	// -------------------------------------------------------------------------
 	
 	wire obs_0_on, obs_1_on, obs_2_on, obs_3_on, obs_4_on, obs_5_on;
@@ -79,17 +81,17 @@ module main(
 	wire obs_0_visual_on, obs_1_visual_on, obs_2_visual_on, obs_3_visual_on, obs_4_visual_on, obs_5_visual_on;
 	
 	graphic_car_controller obs_0_gcont ( .car_position_x(obs_0_x), .car_position_y(obs_0_y),
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_0_visual_on), .rgb(rgb_obs_0), .owner(3'b001), .reset(reset), .pclk(upsig_fast));
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_0_visual_on), .rgb(rgb_obs_0), .owner(3'b001), .reset(reset), .pclk(clk));
 	graphic_car_controller obs_1_gcont ( .car_position_x(obs_1_x), .car_position_y(obs_1_y),
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_1_visual_on), .rgb(rgb_obs_1), .owner(3'b001), .reset(reset), .pclk(upsig_fast));
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_1_visual_on), .rgb(rgb_obs_1), .owner(3'b010), .reset(reset), .pclk(clk));
 	graphic_car_controller obs_2_gcont ( .car_position_x(obs_2_x), .car_position_y(obs_2_y),
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_2_visual_on), .rgb(rgb_obs_2), .owner(3'b001), .reset(reset), .pclk(upsig_fast));
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_2_visual_on), .rgb(rgb_obs_2), .owner(3'b011), .reset(reset), .pclk(clk));
 	graphic_car_controller obs_3_gcont ( .car_position_x(obs_3_x), .car_position_y(obs_3_y),
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_3_visual_on), .rgb(rgb_obs_3), .owner(3'b001), .reset(reset), .pclk(upsig_fast));
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_3_visual_on), .rgb(rgb_obs_3), .owner(3'b100), .reset(reset), .pclk(clk));
 	graphic_car_controller obs_4_gcont ( .car_position_x(obs_4_x), .car_position_y(obs_4_y),
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_4_visual_on), .rgb(rgb_obs_4), .owner(3'b001), .reset(reset), .pclk(upsig_fast));
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_4_visual_on), .rgb(rgb_obs_4), .owner(3'b101), .reset(reset), .pclk(clk));
 	graphic_car_controller obs_5_gcont ( .car_position_x(obs_5_x), .car_position_y(obs_5_y),
-					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_5_visual_on), .rgb(rgb_obs_5), .owner(3'b001), .reset(reset), .pclk(upsig_fast));
+					.pixel_x(pixel_x), .pixel_y(pixel_y), .on(obs_5_visual_on), .rgb(rgb_obs_5), .owner(3'b110), .reset(reset), .pclk(clk));
 
 	// -------------------------------------------------------------------------
 
@@ -105,10 +107,15 @@ module main(
 
 	// -------------------------------------------------------------------------
 	
-	wire [2:0] rgb_bg;
+	wire [2:0] rgb_bg, rgb_score;
+	wire on_score;
 	background bg (.pixel_x(pixel_x), .pixel_y(pixel_y), .rgb(rgb_bg), .clk(clk), .update_signal(upsig_fast), .reset(reset));
 
-	graphic_controller #(7) gc (
+	score_graphic_controller scoreboard (
+		.pixel_x(pixel_x), .pixel_y(pixel_y), .pclk(clk), .rgb(rgb_score), .on(on_score)
+	);
+	
+	graphic_controller #(8) gc (
 				.rgb(rgb_next),
 				.on_objs({
 					on_player_car,
@@ -118,7 +125,8 @@ module main(
 					obs_3_on & obs_3_visual_on,
 					obs_4_on & obs_4_visual_on,
 					obs_5_on & obs_5_visual_on,
-					1'b1}),
+					on_score, //Esto es el score 
+					1'b1}), //Esto es el fondo
 				.r_objs({
 					rgb_car_player[0],
 					rgb_obs_0[0],
@@ -127,7 +135,9 @@ module main(
 					rgb_obs_3[0],
 					rgb_obs_4[0],
 					rgb_obs_5[0],
-					rgb_bg[0]}),
+					rgb_score[0],
+					rgb_bg[0]
+					}),
 				.g_objs({
 					rgb_car_player[1],
 					rgb_obs_0[1],
@@ -136,7 +146,9 @@ module main(
 					rgb_obs_3[1],
 					rgb_obs_4[1],
 					rgb_obs_5[1],
-					rgb_bg[1]}),
+					rgb_score[1],
+					rgb_bg[1]
+					}),
 				.b_objs({
 					rgb_car_player[2],
 					rgb_obs_0[2],
@@ -145,7 +157,9 @@ module main(
 					rgb_obs_3[2],
 					rgb_obs_4[2],
 					rgb_obs_5[2],
-					rgb_bg[2]})
+					rgb_score[2],
+					rgb_bg[2]
+					})
 				);
 				
    // output
