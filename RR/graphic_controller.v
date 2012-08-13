@@ -22,7 +22,6 @@ module graphic_controller
 				rgb[2] = b_objs[i];
 			end
 		end
-		
 	end
 
 endmodule
