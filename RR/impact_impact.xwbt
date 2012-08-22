@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\impact.xsl
+OUTFILE=C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR
+LICENSE=iMPACT
+USER_INFO=iMPACT

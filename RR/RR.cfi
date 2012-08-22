@@ -1,0 +1,11 @@
+# PROMGEN: Xilinx Prom Generator P.28xd
+# Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+SOFTWARE_VERSION P.28xd
+DATE            08/13/2012 - 14:05
+SOURCE          C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\RR.mcs
+DEVICE          XCF04S
+DATA_WIDTH      8
+FILL_DATA       0xFF
+SIGNATURE       0x03E00482
+START_ADDRESS   0x00000000 END_ADDRESS 0x0004547F DIRECTION_UP   "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/game.bit" 3s500efg320

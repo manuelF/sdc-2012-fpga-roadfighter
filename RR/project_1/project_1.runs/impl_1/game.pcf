@@ -1,0 +1,27 @@
+//! **************************************************************************
+// Written by: Map P.28xd on Sat Aug 04 11:07:12 2012
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "C9" LEVEL 1;
+COMP "left" LOCATE = SITE "D18" LEVEL 1;
+COMP "hsync" LOCATE = SITE "F15" LEVEL 1;
+COMP "right" LOCATE = SITE "H13" LEVEL 1;
+COMP "reset" LOCATE = SITE "K17" LEVEL 1;
+COMP "start" LOCATE = SITE "V4" LEVEL 1;
+COMP "vsync" LOCATE = SITE "F14" LEVEL 1;
+COMP "colision" LOCATE = SITE "F9" LEVEL 1;
+COMP "rgb[0]" LOCATE = SITE "G15" LEVEL 1;
+COMP "rgb[1]" LOCATE = SITE "H15" LEVEL 1;
+COMP "rgb[2]" LOCATE = SITE "H14" LEVEL 1;
+COMP "total_score[0]" LOCATE = SITE "F12" LEVEL 1;
+COMP "total_score[1]" LOCATE = SITE "E12" LEVEL 1;
+COMP "total_score[2]" LOCATE = SITE "E11" LEVEL 1;
+COMP "total_score[3]" LOCATE = SITE "F11" LEVEL 1;
+COMP "total_score[4]" LOCATE = SITE "C11" LEVEL 1;
+COMP "total_score[5]" LOCATE = SITE "D11" LEVEL 1;
+COMP "rotary_a" LOCATE = SITE "K18" LEVEL 1;
+COMP "rotary_b" LOCATE = SITE "G18" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+

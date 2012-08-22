@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj RR -o C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/letter_memory.tfi -lib work C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR//letter_memory.v -module letter_memory -template C:/Xilinx/14.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 

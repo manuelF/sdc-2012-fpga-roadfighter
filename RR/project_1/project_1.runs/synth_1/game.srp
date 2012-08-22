@@ -1,0 +1,849 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> 
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.23 secs
+ 
+--> Reading design: game.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "game.prj"
+
+---- Target Parameters
+Target Device                      : xc3s500efg320-4
+Output File Name                   : "game.ngc"
+
+---- Source Options
+Top Module Name                    : game
+
+---- Target Options
+Add Generic Clock Buffer(BUFG)     : 24
+
+---- General Options
+Optimization Goal                  : speed
+Optimization Effort                : 1
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/upclk.v" in library work
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/flank_detector.v" in library work
+Module <upclk> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/obstacle.v" in library work
+Module <flank_detector> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/colisioneer.v" in library work
+Module <obstacle> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/vga_sync.v" in library work
+Module <colisioneer> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/player.v" in library work
+Module <vga_sync> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/obstacle_manager.v" in library work
+Module <player> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/graphic_controller.v" in library work
+Module <obstacle_manager> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/graphic_car_controller.v" in library work
+Module <graphic_controller> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/colision_manager.v" in library work
+Module <graphic_car_controller> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/background.v" in library work
+Module <colisionManager> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/universal_bin_counter.v" in library work
+Module <background> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/rotary_decode.v" in library work
+Module <universal_bin_counter> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/main.v" in library work
+Module <rotary_decode> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/db-fsm.v" in library work
+Module <main> compiled
+Compiling verilog file "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/game.v" in library work
+Module <db_fsm> compiled
+Module <game> compiled
+No errors in compilation
+Analysis of file <"game.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <game> in library <work> with parameters.
+	CLK = "00000010111110101111000010000000"
+	DROPRATE = "00000000000000000000000000011001"
+	DROPSYNC = "0110010101011110111110101"
+	TOPE = "11111111111111111"
+
+Analyzing hierarchy for module <db_fsm> in library <work> with parameters.
+	N = "00000000000000000000000000010011"
+	one = "100"
+	wait0_1 = "101"
+	wait0_2 = "110"
+	wait0_3 = "111"
+	wait1_1 = "001"
+	wait1_2 = "010"
+	wait1_3 = "011"
+	zero = "000"
+
+Analyzing hierarchy for module <universal_bin_counter> in library <work> with parameters.
+	N = "00000000000000000000000000010001"
+
+Analyzing hierarchy for module <rotary_decode> in library <work>.
+
+Analyzing hierarchy for module <main> in library <work>.
+
+Analyzing hierarchy for module <vga_sync> in library <work> with parameters.
+	HB = "00000000000000000000000000010000"
+	HD = "00000000000000000000001010000000"
+	HF = "00000000000000000000000000110000"
+	HR = "00000000000000000000000001100000"
+	VB = "00000000000000000000000000100001"
+	VD = "00000000000000000000000111100000"
+	VF = "00000000000000000000000000001010"
+	VR = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <player> in library <work> with parameters.
+	PLAYER_HEIGHT = "00000000000000000000000000100000"
+	PLAYER_STARTX = "00000000000000000000000010000000"
+	PLAYER_STARTY = "00000000000000000000000110111000"
+	PLAYER_WIDTH = "00000000000000000000000000010000"
+	ROADTRACK_WIDTH = "00000000000000000000000011111111"
+
+Analyzing hierarchy for module <graphic_car_controller> in library <work> with parameters.
+	AMARILLO = "110"
+	AZUL = "001"
+	BLANCO = "111"
+	CAR_HEIGHT = "00000000000000000000000000100000"
+	CAR_WIDTH = "00000000000000000000000000010000"
+	CYAN = "011"
+	MAGENTA = "101"
+	NEGRO = "000"
+	ROJO = "100"
+	VERDE = "010"
+
+Analyzing hierarchy for module <obstacle_manager> in library <work>.
+
+Analyzing hierarchy for module <colisionManager> in library <work>.
+
+Analyzing hierarchy for module <background> in library <work> with parameters.
+	AMARILLO = "110"
+	AZUL = "001"
+	BLANCO = "111"
+	CYAN = "011"
+	MAGENTA = "101"
+	NEGRO = "000"
+	ROADMARK_XEND = "00000000000000000000000010000100"
+	ROADMARK_XSTART = "00000000000000000000000001111100"
+	ROADMARK_YLEN = "00000000000000000000000001000000"
+	ROADMARK_YSTGAP = "00000000000000000000000000101010"
+	ROJO = "100"
+	VERDE = "010"
+
+Analyzing hierarchy for module <graphic_controller> in library <work>.
+
+Analyzing hierarchy for module <obstacle> in library <work> with parameters.
+	ROADTRACK_HEIGHT = "00000000000000000000000111100000"
+
+Analyzing hierarchy for module <colisioneer> in library <work> with parameters.
+	CAR_HEIGHT = "00000000000000000000000000100000"
+	CAR_WIDTH = "00000000000000000000000000010000"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <game>.
+	CLK = 32'sb00000010111110101111000010000000
+	DROPRATE = 32'sb00000000000000000000000000011001
+	DROPSYNC = 25'b0110010101011110111110101
+	TOPE = 17'b11111111111111111
+Module <game> is correct for synthesis.
+ 
+Analyzing module <db_fsm> in library <work>.
+	N = 32'sb00000000000000000000000000010011
+	one = 3'b100
+	wait0_1 = 3'b101
+	wait0_2 = 3'b110
+	wait0_3 = 3'b111
+	wait1_1 = 3'b001
+	wait1_2 = 3'b010
+	wait1_3 = 3'b011
+	zero = 3'b000
+Module <db_fsm> is correct for synthesis.
+ 
+Analyzing module <universal_bin_counter> in library <work>.
+	N = 32'sb00000000000000000000000000010001
+Module <universal_bin_counter> is correct for synthesis.
+ 
+Analyzing module <rotary_decode> in library <work>.
+Module <rotary_decode> is correct for synthesis.
+ 
+Analyzing module <main> in library <work>.
+Module <main> is correct for synthesis.
+ 
+Analyzing module <vga_sync> in library <work>.
+	HB = 32'sb00000000000000000000000000010000
+	HD = 32'sb00000000000000000000001010000000
+	HF = 32'sb00000000000000000000000000110000
+	HR = 32'sb00000000000000000000000001100000
+	VB = 32'sb00000000000000000000000000100001
+	VD = 32'sb00000000000000000000000111100000
+	VF = 32'sb00000000000000000000000000001010
+	VR = 32'sb00000000000000000000000000000010
+Module <vga_sync> is correct for synthesis.
+ 
+Analyzing module <player> in library <work>.
+	PLAYER_HEIGHT = 32'sb00000000000000000000000000100000
+	PLAYER_STARTX = 32'sb00000000000000000000000010000000
+	PLAYER_STARTY = 32'sb00000000000000000000000110111000
+	PLAYER_WIDTH = 32'sb00000000000000000000000000010000
+	ROADTRACK_WIDTH = 32'sb00000000000000000000000011111111
+Module <player> is correct for synthesis.
+ 
+Analyzing module <graphic_car_controller> in library <work>.
+	AMARILLO = 3'b110
+	AZUL = 3'b001
+	BLANCO = 3'b111
+	CAR_HEIGHT = 32'sb00000000000000000000000000100000
+	CAR_WIDTH = 32'sb00000000000000000000000000010000
+	CYAN = 3'b011
+	MAGENTA = 3'b101
+	NEGRO = 3'b000
+	ROJO = 3'b100
+	VERDE = 3'b010
+Module <graphic_car_controller> is correct for synthesis.
+ 
+Analyzing module <obstacle_manager> in library <work>.
+Module <obstacle_manager> is correct for synthesis.
+ 
+Analyzing module <obstacle> in library <work>.
+	ROADTRACK_HEIGHT = 32'sb00000000000000000000000111100000
+Module <obstacle> is correct for synthesis.
+ 
+Analyzing module <colisionManager> in library <work>.
+Module <colisionManager> is correct for synthesis.
+ 
+Analyzing module <colisioneer> in library <work>.
+	CAR_HEIGHT = 32'sb00000000000000000000000000100000
+	CAR_WIDTH = 32'sb00000000000000000000000000010000
+Module <colisioneer> is correct for synthesis.
+ 
+Analyzing module <background> in library <work>.
+	AMARILLO = 3'b110
+	AZUL = 3'b001
+	BLANCO = 3'b111
+	CYAN = 3'b011
+	MAGENTA = 3'b101
+	NEGRO = 3'b000
+	ROADMARK_XEND = 32'sb00000000000000000000000010000100
+	ROADMARK_XSTART = 32'sb00000000000000000000000001111100
+	ROADMARK_YLEN = 32'sb00000000000000000000000001000000
+	ROADMARK_YSTGAP = 32'sb00000000000000000000000000101010
+	ROJO = 3'b100
+	VERDE = 3'b010
+Module <background> is correct for synthesis.
+ 
+Analyzing module <graphic_controller> in library <work>.
+Module <graphic_controller> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <db_fsm>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/db-fsm.v".
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <state_reg> of Case statement line 75 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <state_reg> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found finite state machine <FSM_0> for signal <state_reg>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 22                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 1                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found 19-bit up counter for signal <q_reg>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Counter(s).
+Unit <db_fsm> synthesized.
+
+
+Synthesizing Unit <universal_bin_counter>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/universal_bin_counter.v".
+    Found 17-bit adder for signal <q_next>.
+    Found 17-bit up counter for signal <q_reg>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <universal_bin_counter> synthesized.
+
+
+Synthesizing Unit <rotary_decode>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/rotary_decode.v".
+    Found 1-bit register for signal <rotary_left>.
+    Found 1-bit register for signal <rotary_event>.
+    Found 1-bit register for signal <delay_rotary_q1>.
+    Found 1-bit register for signal <rotary_q1>.
+    Found 1-bit 4-to-1 multiplexer for signal <rotary_q1$mux0000> created at line 18.
+    Found 1-bit register for signal <rotary_q2>.
+    Found 1-bit 4-to-1 multiplexer for signal <rotary_q2$mux0000> created at line 18.
+    Summary:
+	inferred   5 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <rotary_decode> synthesized.
+
+
+Synthesizing Unit <vga_sync>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/vga_sync.v".
+    Found 10-bit adder for signal <h_count_next$addsub0000> created at line 68.
+    Found 10-bit register for signal <h_count_reg>.
+    Found 10-bit comparator greatequal for signal <h_sync_next$cmp_ge0000> created at line 84.
+    Found 10-bit comparator lessequal for signal <h_sync_next$cmp_le0000> created at line 84.
+    Found 1-bit register for signal <h_sync_reg>.
+    Found 1-bit register for signal <mod2_reg>.
+    Found 10-bit adder for signal <v_count_next$addsub0000> created at line 78.
+    Found 10-bit register for signal <v_count_reg>.
+    Found 10-bit comparator greatequal for signal <v_sync_next$cmp_ge0000> created at line 87.
+    Found 10-bit comparator lessequal for signal <v_sync_next$cmp_le0000> created at line 87.
+    Found 1-bit register for signal <v_sync_reg>.
+    Found 11-bit comparator less for signal <video_on$cmp_lt0000> created at line 91.
+    Found 10-bit comparator less for signal <video_on$cmp_lt0001> created at line 91.
+    Summary:
+	inferred  23 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+Unit <vga_sync> synthesized.
+
+
+Synthesizing Unit <player>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/player.v".
+    Found 8-bit 4-to-1 multiplexer for signal <car_x_next>.
+    Found 8-bit comparator greater for signal <car_x_next$cmp_gt0000> created at line 59.
+    Found 8-bit comparator less for signal <car_x_next$cmp_lt0000> created at line 62.
+    Found 8-bit addsub for signal <car_x_next$share0000> created at line 55.
+    Found 8-bit register for signal <car_x_reg>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+	inferred   8 Multiplexer(s).
+Unit <player> synthesized.
+
+
+Synthesizing Unit <graphic_car_controller>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/graphic_car_controller.v".
+    Found 4-bit subtractor for signal <local_pixel_x>.
+    Found 5-bit subtractor for signal <local_pixel_y>.
+    Found 10-bit adder for signal <lower_bound>.
+    Found 8-bit comparator greatequal for signal <on$cmp_ge0000> created at line 56.
+    Found 8-bit comparator greatequal for signal <on$cmp_ge0001> created at line 56.
+    Found 10-bit comparator greatequal for signal <on$cmp_ge0002> created at line 56.
+    Found 10-bit comparator lessequal for signal <on$cmp_le0000> created at line 56.
+    Found 4-bit comparator greatequal for signal <rgb_reg$cmp_ge0000> created at line 77.
+    Found 4-bit comparator greatequal for signal <rgb_reg$cmp_ge0001> created at line 77.
+    Found 4-bit comparator greatequal for signal <rgb_reg$cmp_ge0002> created at line 81.
+    Found 4-bit comparator lessequal for signal <rgb_reg$cmp_le0000> created at line 77.
+    Found 4-bit comparator lessequal for signal <rgb_reg$cmp_le0001> created at line 77.
+    Found 4-bit comparator lessequal for signal <rgb_reg$cmp_le0002> created at line 81.
+    Found 5-bit comparator lessequal for signal <rgb_reg$cmp_le0003> created at line 81.
+    Found 8-bit adder for signal <right_bound>.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  11 Comparator(s).
+Unit <graphic_car_controller> synthesized.
+
+
+Synthesizing Unit <background>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/background.v".
+    Found 11-bit subtractor for signal <$sub0000> created at line 65.
+    Found 9-bit comparator lessequal for signal <rgb$cmp_ge0000> created at line 64.
+    Found 8-bit comparator greatequal for signal <rgb$cmp_ge0001> created at line 64.
+    Found 11-bit comparator greater for signal <rgb$cmp_gt0000> created at line 65.
+    Found 6-bit up counter for signal <scroll_reg>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   3 Comparator(s).
+Unit <background> synthesized.
+
+
+Synthesizing Unit <graphic_controller>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/graphic_controller.v".
+WARNING:Xst:647 - Input <on_objs<0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <graphic_controller> synthesized.
+
+
+Synthesizing Unit <obstacle>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/obstacle.v".
+    Found 10-bit comparator less for signal <on>.
+    Found 8-bit register for signal <car_x_reg>.
+    Found 10-bit adder for signal <car_y_next$addsub0000> created at line 59.
+    Found 10-bit register for signal <car_y_reg>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <obstacle> synthesized.
+
+
+Synthesizing Unit <colisioneer>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/colisioneer.v".
+    Found 10-bit comparator greatequal for signal <colision$cmp_ge0000> created at line 51.
+    Found 10-bit comparator greatequal for signal <colision$cmp_ge0001> created at line 51.
+    Found 10-bit comparator greatequal for signal <colision$cmp_ge0002> created at line 51.
+    Found 10-bit comparator greatequal for signal <colision$cmp_ge0003> created at line 51.
+    Found 8-bit comparator greatequal for signal <colision$cmp_ge0004> created at line 51.
+    Found 8-bit comparator greatequal for signal <colision$cmp_ge0005> created at line 51.
+    Found 8-bit comparator greatequal for signal <colision$cmp_ge0006> created at line 51.
+    Found 8-bit comparator greatequal for signal <colision$cmp_ge0007> created at line 51.
+    Found 10-bit adder for signal <lower_bound_1>.
+    Found 10-bit adder for signal <lower_bound_2>.
+    Found 8-bit adder for signal <right_bound_1>.
+    Found 8-bit adder for signal <right_bound_2>.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred   8 Comparator(s).
+Unit <colisioneer> synthesized.
+
+
+Synthesizing Unit <obstacle_manager>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/obstacle_manager.v".
+    Found 27-bit up counter for signal <contar>.
+    Found 6-bit register for signal <init_obstacle_reg>.
+    Found 7-bit register for signal <init_reg>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  13 D-type flip-flop(s).
+Unit <obstacle_manager> synthesized.
+
+
+Synthesizing Unit <colisionManager>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/colision_manager.v".
+Unit <colisionManager> synthesized.
+
+
+Synthesizing Unit <main>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/main.v".
+    Found 3-bit register for signal <rgb_reg>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <main> synthesized.
+
+
+Synthesizing Unit <game>.
+    Related source file is "C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/game.v".
+WARNING:Xst:646 - Signal <contar_reg> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <contar_next> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+    Found 26-bit adder for signal <clk_counter_next$addsub0000> created at line 133.
+    Found 27-bit comparator greater for signal <clk_counter_next$cmp_gt0000> created at line 126.
+    Found 26-bit register for signal <clk_counter_reg>.
+    Found 26-bit adder for signal <drop_next$addsub0000> created at line 94.
+    Found 26-bit comparator greater for signal <drop_next$cmp_gt0000> created at line 91.
+    Found 26-bit register for signal <drop_reg>.
+    Found 1-bit register for signal <go_left_rot>.
+    Found 1-bit register for signal <go_right_rot>.
+    Found 3-bit register for signal <red_reg>.
+    Found 1-bit register for signal <start_reg>.
+    Found 6-bit adder for signal <total_score_next$addsub0000> created at line 129.
+    Found 6-bit register for signal <total_score_reg>.
+    Found 18-bit adder for signal <upsig_fast_next$addsub0000> created at line 60.
+    Found 18-bit comparator greater for signal <upsig_fast_next$cmp_gt0000> created at line 57.
+    Found 18-bit register for signal <upsig_fast_reg>.
+    Summary:
+	inferred  82 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   3 Comparator(s).
+Unit <game> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 67
+ 10-bit adder                                          : 27
+ 11-bit subtractor                                     : 1
+ 17-bit adder                                          : 1
+ 18-bit adder                                          : 1
+ 26-bit adder                                          : 2
+ 4-bit subtractor                                      : 7
+ 5-bit subtractor                                      : 7
+ 6-bit adder                                           : 1
+ 8-bit adder                                           : 19
+ 8-bit addsub                                          : 1
+# Counters                                             : 5
+ 17-bit up counter                                     : 1
+ 19-bit up counter                                     : 2
+ 27-bit up counter                                     : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 34
+ 1-bit register                                        : 11
+ 10-bit register                                       : 8
+ 18-bit register                                       : 1
+ 26-bit register                                       : 2
+ 3-bit register                                        : 2
+ 6-bit register                                        : 2
+ 7-bit register                                        : 1
+ 8-bit register                                        : 7
+# Comparators                                          : 145
+ 10-bit comparator greatequal                          : 33
+ 10-bit comparator less                                : 7
+ 10-bit comparator lessequal                           : 9
+ 11-bit comparator greater                             : 1
+ 11-bit comparator less                                : 1
+ 18-bit comparator greater                             : 1
+ 26-bit comparator greater                             : 1
+ 27-bit comparator greater                             : 1
+ 4-bit comparator greatequal                           : 21
+ 4-bit comparator lessequal                            : 21
+ 5-bit comparator lessequal                            : 7
+ 8-bit comparator greatequal                           : 39
+ 8-bit comparator greater                              : 1
+ 8-bit comparator less                                 : 1
+ 9-bit comparator lessequal                            : 1
+# Multiplexers                                         : 3
+ 1-bit 4-to-1 multiplexer                              : 2
+ 8-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <db1/state_reg/FSM> on signal <state_reg[1:3]> with user encoding.
+Optimizing FSM <db2/state_reg/FSM> on signal <state_reg[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 010
+ 011   | 011
+ 100   | 100
+ 101   | 101
+ 110   | 110
+ 111   | 111
+-------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 67
+ 10-bit adder                                          : 27
+ 17-bit adder                                          : 1
+ 18-bit adder                                          : 1
+ 26-bit adder                                          : 2
+ 4-bit subtractor                                      : 7
+ 5-bit subtractor                                      : 7
+ 6-bit adder                                           : 1
+ 6-bit subtractor                                      : 1
+ 8-bit adder                                           : 19
+ 8-bit addsub                                          : 1
+# Counters                                             : 5
+ 17-bit up counter                                     : 1
+ 19-bit up counter                                     : 2
+ 27-bit up counter                                     : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 239
+ Flip-Flops                                            : 239
+# Comparators                                          : 145
+ 10-bit comparator greatequal                          : 33
+ 10-bit comparator less                                : 7
+ 10-bit comparator lessequal                           : 9
+ 11-bit comparator greater                             : 1
+ 11-bit comparator less                                : 1
+ 18-bit comparator greater                             : 1
+ 26-bit comparator greater                             : 1
+ 27-bit comparator greater                             : 1
+ 4-bit comparator greatequal                           : 21
+ 4-bit comparator lessequal                            : 21
+ 5-bit comparator lessequal                            : 7
+ 8-bit comparator greatequal                           : 39
+ 8-bit comparator greater                              : 1
+ 8-bit comparator less                                 : 1
+ 9-bit comparator lessequal                            : 1
+# Multiplexers                                         : 3
+ 1-bit 4-to-1 multiplexer                              : 2
+ 8-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <ob5/car_x_reg_4> (without init value) has a constant value of 0 in block <obstacle_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ob4/car_x_reg_4> (without init value) has a constant value of 0 in block <obstacle_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ob3/car_x_reg_4> (without init value) has a constant value of 0 in block <obstacle_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ob2/car_x_reg_4> (without init value) has a constant value of 0 in block <obstacle_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ob1/car_x_reg_4> (without init value) has a constant value of 0 in block <obstacle_manager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ob0/car_x_reg_4> (without init value) has a constant value of 0 in block <obstacle_manager>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2146 - In block <game>, Counter <db2/q_reg> <db1/q_reg> are equivalent, XST will keep only <db2/q_reg>.
+
+Optimizing unit <game> ...
+
+Optimizing unit <rotary_decode> ...
+
+Optimizing unit <vga_sync> ...
+
+Optimizing unit <graphic_car_controller> ...
+
+Optimizing unit <background> ...
+
+Optimizing unit <colisioneer> ...
+
+Optimizing unit <player> ...
+
+Optimizing unit <obstacle_manager> ...
+
+Optimizing unit <main> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+FlipFlop road_fighter/p1/car_x_reg_6 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 309
+ Flip-Flops                                            : 309
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+Top Level Output File Name         : game.ngc
+Output Format                      : ngc
+Optimization Goal                  : speed
+Keep Hierarchy                     : no
+
+Design Statistics
+# IOs                              : 19
+
+Cell Usage :
+# BELS                             : 2767
+#      GND                         : 1
+#      INV                         : 167
+#      LUT1                        : 344
+#      LUT2                        : 506
+#      LUT2_D                      : 8
+#      LUT2_L                      : 7
+#      LUT3                        : 123
+#      LUT3_D                      : 9
+#      LUT3_L                      : 9
+#      LUT4                        : 300
+#      LUT4_D                      : 27
+#      LUT4_L                      : 27
+#      MUXCY                       : 976
+#      MUXF5                       : 5
+#      VCC                         : 1
+#      XORCY                       : 257
+# FlipFlops/Latches                : 309
+#      FD                          : 22
+#      FDC                         : 120
+#      FDCE                        : 121
+#      FDE                         : 10
+#      FDPE                        : 29
+#      FDR                         : 7
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 18
+#      IBUF                        : 6
+#      OBUF                        : 12
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      796  out of   4656    17%  
+ Number of Slice Flip Flops:            309  out of   9312     3%  
+ Number of 4 input LUTs:               1527  out of   9312    16%  
+ Number of IOs:                          19
+ Number of bonded IOBs:                  19  out of    232     8%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 309   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | IBUF                   | 270   |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 11.912ns (Maximum Frequency: 83.949MHz)
+   Minimum input arrival time before clock: 4.437ns
+   Maximum output required time after clock: 12.941ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 11.912ns (frequency: 83.949MHz)
+  Total number of paths / destination ports: 212826 / 473
+-------------------------------------------------------------------------
+Delay:               11.912ns (Levels of Logic = 7)
+  Source:            road_fighter/p1/car_x_reg_5 (FF)
+  Destination:       road_fighter/obs_manager/ob4/car_x_reg_7 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: road_fighter/p1/car_x_reg_5 to road_fighter/obs_manager/ob4/car_x_reg_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDPE:C->Q            60   0.591   1.306  road_fighter/p1/car_x_reg_5 (road_fighter/p1/car_x_reg_5)
+     LUT4:I2->O           13   0.704   1.062  road_fighter/p1_gcontroller/Madd_right_bound_xor<7>11 (road_fighter/cm/col_0/right_bound_2<7>)
+     LUT2:I1->O            1   0.704   0.000  road_fighter/cm/col_1/Mcompar_colision_cmp_ge0006_lut<7> (road_fighter/cm/col_1/Mcompar_colision_cmp_ge0006_lut<7>)
+     MUXCY:S->O            1   0.864   0.455  road_fighter/cm/col_1/Mcompar_colision_cmp_ge0006_cy<7> (road_fighter/cm/col_1/colision_cmp_ge0006)
+     LUT4:I2->O            1   0.704   0.455  road_fighter/cm/colision122 (road_fighter/cm/colision122)
+     LUT4:I2->O            7   0.704   0.712  road_fighter/cm/colision136 (road_fighter/cm/colision136)
+     LUT4_D:I3->O          5   0.704   0.637  run31_SW1 (N160)
+     LUT4:I3->O           17   0.704   1.051  road_fighter/obs_manager/ob4/car_x_reg_not00011 (road_fighter/obs_manager/ob4/car_x_reg_not0001)
+     FDCE:CE                   0.555          road_fighter/obs_manager/ob4/car_x_reg_0
+    ----------------------------------------
+    Total                     11.912ns (6.234ns logic, 5.678ns route)
+                                       (52.3% logic, 47.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 13 / 11
+-------------------------------------------------------------------------
+Offset:              4.437ns (Levels of Logic = 2)
+  Source:            reset (PAD)
+  Destination:       go_left_rot (FF)
+  Destination Clock: clk rising
+
+  Data Path: reset to go_left_rot
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           271   1.218   1.513  reset_IBUF (reset_IBUF)
+     LUT2:I0->O            2   0.704   0.447  go_left_rot_and00001 (go_left_rot_and0000)
+     FDE:CE                    0.555          go_left_rot
+    ----------------------------------------
+    Total                      4.437ns (2.477ns logic, 1.960ns route)
+                                       (55.8% logic, 44.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 1163 / 12
+-------------------------------------------------------------------------
+Offset:              12.941ns (Levels of Logic = 7)
+  Source:            road_fighter/p1/car_x_reg_5 (FF)
+  Destination:       colision (PAD)
+  Source Clock:      clk rising
+
+  Data Path: road_fighter/p1/car_x_reg_5 to colision
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDPE:C->Q            60   0.591   1.306  road_fighter/p1/car_x_reg_5 (road_fighter/p1/car_x_reg_5)
+     LUT4:I2->O           13   0.704   1.062  road_fighter/p1_gcontroller/Madd_right_bound_xor<7>11 (road_fighter/cm/col_0/right_bound_2<7>)
+     LUT2:I1->O            1   0.704   0.000  road_fighter/cm/col_5/Mcompar_colision_cmp_ge0006_lut<7> (road_fighter/cm/col_5/Mcompar_colision_cmp_ge0006_lut<7>)
+     MUXCY:S->O            1   0.864   0.455  road_fighter/cm/col_5/Mcompar_colision_cmp_ge0006_cy<7> (road_fighter/cm/col_5/colision_cmp_ge0006)
+     LUT4:I2->O            1   0.704   0.455  road_fighter/cm/colision66 (road_fighter/cm/colision66)
+     LUT4:I2->O           12   0.704   0.996  road_fighter/cm/colision80 (road_fighter/cm/colision80)
+     LUT4:I2->O            1   0.704   0.420  road_fighter/cm/colision148 (colision_OBUF)
+     OBUF:I->O                 3.272          colision_OBUF (colision)
+    ----------------------------------------
+    Total                     12.941ns (8.247ns logic, 4.694ns route)
+                                       (63.7% logic, 36.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 17.20 secs
+ 
+--> 
+
+Total memory usage is 282120 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   10 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+
