@@ -1,0 +1,17 @@
+PROMGEN: Xilinx Prom Generator P.28xd
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+promgen -w -p mcs -c FF -o C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\//RR -x xcf04s -u 00000000 C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/game.bit 
+
+PROM C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\RR.prm map: Mon Aug 13 14:05:12 2012
+
+Calculating PROM checksum with fill value ff
+
+Format        Mcs86 (32-bit)
+Size          512K
+PROM start    0000:0000
+PROM end      0007:ffff
+PROM checksum 03e00482
+
+        Addr1        Addr2                     Date File(s)
+    0000:0000    0004:547f     Aug 13 14:03:00 2012 C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/game.bit

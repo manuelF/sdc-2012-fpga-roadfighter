@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj RR -o C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/obstacle_manager.tfi -lib work C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR//obstacle_manager.v -module obstacle_manager -template C:/Xilinx/14.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 

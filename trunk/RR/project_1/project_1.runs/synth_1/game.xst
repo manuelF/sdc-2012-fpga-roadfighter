@@ -1,0 +1,9 @@
+set -loop_iteration_limit 1000
+run
+-ifn game.prj
+-top game
+-p xc3s500efg320-4
+-ofn game.ngc
+-opt_mode speed
+-opt_level 1
+-bufg 24

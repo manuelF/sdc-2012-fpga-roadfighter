@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\project_1\project_1.runs\impl_1\game_routed.ncd
+OUTFILE=C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\project_1\project_1.runs\impl_1\game.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\project_1\project_1.runs\impl_1
+LICENSE=WebPack
+USER_INFO=207618120_0_0_577

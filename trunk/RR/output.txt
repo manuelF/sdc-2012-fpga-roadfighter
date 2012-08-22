@@ -1,0 +1,11 @@
+Storage Target: Xilinx Flash/PROM
+Storage Family: Platform Flash
+xcf04s          [4 M]
+FF
+RR
+C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR/
+
+MCS
+No
+CS
+No
