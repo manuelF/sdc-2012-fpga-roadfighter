@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="1.7" >
  <header>
-  <DateModified>2012-08-21T22:44:33</DateModified>
+  <DateModified>2012-08-25T18:35:47</DateModified>
   <ModuleName>game</ModuleName>
   <SummaryTimeStamp>2012-08-12T17:24:55</SummaryTimeStamp>
   <DateInitialized>2012-08-02T23:42:53</DateInitialized>
-  <ImplementationReportsDirectory>C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR\</ImplementationReportsDirectory>
-  <SavedFilePath>C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/iseconfig/game.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Mainframe 3/fpga/RR\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/Mainframe 3/fpga/RR/iseconfig/game.xreport</SavedFilePath>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

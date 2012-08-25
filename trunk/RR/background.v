@@ -59,7 +59,10 @@ module background(
 	begin
 		case ( pixel_x[9:8] )
 			2'b00: // Primera parte del fondo
-				rgb = VERDE;
+				if(pixel_x >= 10'b0011111000)
+					rgb = BLANCO;
+				else
+					rgb = VERDE;
 			2'b01:
 				if ( ROADMARK_XEND >= pixel_x[7:0] && pixel_x[7:0] >= ROADMARK_XSTART )
 					if ( (pixel_y-scroll_reg) % ROADMARK_YLEN > ROADMARK_YSTGAP)
@@ -68,7 +71,12 @@ module background(
 						rgb = AMARILLO;
 				else
 					rgb = NEGRO;
-			default
+			2'b10:
+				if(pixel_x >= 10'b1000000000 && pixel_x <= 10'b1000001000)
+					rgb = BLANCO;
+				else
+					rgb = VERDE;
+			default:
 				rgb = VERDE;
 		endcase
 	end

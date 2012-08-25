@@ -8,25 +8,34 @@
 <msg type="info" file="sim" num="172" delta="old" >Generating IP...
 </msg>
 
-<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">A core named &apos;car_bitmap&apos; already exists in the project. Output products for this core may be overwritten.</arg>
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Unable to find</arg>
 </msg>
 
-<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">A core named &apos;car_bitmap&apos; already exists in the project. Output products for this core may be overwritten.</arg>
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\scripts\cars.coe</arg>
 </msg>
 
-<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Component blk_mem_gen_v7_2 does not have a valid model name for Verilog synthesis</arg>
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   Coregen is looking for</arg>
 </msg>
 
-<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Pre-processing HDL files for &apos;car_bitmap&apos;...</arg>
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\scripts\cars.coe</arg>
 </msg>
 
-<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">No files were found for the view xilinx_documentation</arg>
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Unable to find</arg>
 </msg>
 
-<msg type="info" file="sim" num="949" delta="new" >Finished generation of ASY schematic symbol.
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\scripts\cars.coe</arg>
 </msg>
 
-<msg type="info" file="sim" num="948" delta="new" >Finished FLIST file generation.
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   Coregen is looking for</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\scripts\cars.coe</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">An invalid core configuration has been detected during</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   Customization. Core parameters will be reset to their default values.</arg>
 </msg>
 
 </messages>
