@@ -45,5 +45,5 @@ module score_graphic_controller(
 	assign rgb[1]=score_line[score_pixel_x*3+1];
 	assign rgb[0]=score_line[score_pixel_x*3+0];
 	
-	assign on = (pixel_y <= 40+12 && pixel_y >= 40 && pixel_x<=43);
+	assign on = (pixel_y <= 40+11 && pixel_y >= 40 && pixel_x<=43);
 endmodule

@@ -103,8 +103,7 @@ module game(
 
 	always @*
 		start_next = start_reg;
-
-		
+	
 	localparam CLK = 50000000; //ceil(log(CLK)) = 26, por eso son 26 bits.
 	reg [25:0] clk_counter_reg, clk_counter_next;
 	reg [5:0] total_score_reg, total_score_next;
@@ -133,8 +132,6 @@ module game(
 				total_score_next = total_score_reg;
 			end
 	assign total_score = total_score_reg;
-	
-	
 	
 	reg go_left_rot=1'b0;
 	reg go_right_rot = 1'b0;
