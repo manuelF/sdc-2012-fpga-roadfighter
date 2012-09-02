@@ -22,7 +22,7 @@ module main(
     input wire clk, reset,
 	 input wire drop,
 	 input wire left, right,
-	 input wire upsig, upsig_fast, alive,
+	 input wire upsig, upsig_fast, alive,	 
     output wire hsync, vsync,
     output wire [2:0] rgb,
 	 output wire [7:0] initial_dbg,
@@ -75,7 +75,7 @@ module main(
 		.obstacle_on({obs_0_on, obs_1_on, obs_2_on, obs_3_on, obs_4_on, obs_5_on}),
 		.obstacle_x({obs_0_x, obs_1_x, obs_2_x, obs_3_x, obs_4_x, obs_5_x}),
 		.obstacle_y({obs_0_y, obs_1_y, obs_2_y, obs_3_y, obs_4_y, obs_5_y})
-		,.initial_dbg(initial_dbg)
+		,.initial_dbg(initial_dbg), .left(left), .right(right)
 		);
 
 	wire [2:0] rgb_obs_0, rgb_obs_1, rgb_obs_2, rgb_obs_3, rgb_obs_4, rgb_obs_5;
