@@ -3,7 +3,7 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 promgen -w -p mcs -c FF -o C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\//Untitled -x xcf04s -u 00000000 C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/game.bit 
 
-PROM C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\Untitled.prm map: Fri Aug 03 20:47:10 2012
+PROM C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\Untitled.prm map: Sun Sep 02 18:43:25 2012
 
 Calculating PROM checksum with fill value ff
 
@@ -11,7 +11,7 @@ Format        Mcs86 (32-bit)
 Size          512K
 PROM start    0000:0000
 PROM end      0007:ffff
-PROM checksum 03bc6884
+PROM checksum 03e5ca68
 
         Addr1        Addr2                     Date File(s)
-    0000:0000    0004:547f     Aug 03 20:26:02 2012 C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/game.bit
+    0000:0000    0004:547f     Sep 02 18:38:40 2012 C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/game.bit
