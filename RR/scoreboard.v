@@ -23,7 +23,7 @@
 //Empieza en cero.
 module scoreboard_display(
 	input [9:0] xcoord, ycoord, xcoord_ini, ycoord_ini,
-	input clk, reset, 
+	input clk, reset, en,
 	output on,
 	output [2:0] rgb
 	);
@@ -70,9 +70,14 @@ module scoreboard_display(
 				div_next = 0;
 				tick_next = 1;
 			end
-		else
+		else if(en)
 			begin
 				div_next = div_reg+1;
+				tick_next = 0;
+			end
+		else
+			begin
+				div_next = div_reg;
 				tick_next = 0;
 			end
 

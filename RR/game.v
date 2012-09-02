@@ -165,13 +165,11 @@ rotary_decode rotary (
 	
 		*/
 	
-	main road_fighter (.clk(clk), .reset(reset), .upsig(run), .upsig_fast(upsig_fast & ~colision),
-				.drop((drop_reg == DROPSYNC) & ~colision & start_reg), 
-				.left(go_left | go_left_rot), .right(go_right | go_right_rot),				
+	main road_fighter (
+		.clk(clk), .reset(reset), .upsig(run), .upsig_fast(upsig_fast & ~colision),
+		.drop((drop_reg == DROPSYNC) & ~colision & start_reg),  .alive(~colision & start_reg),
+		.left(go_left | go_left_rot), .right(go_right | go_right_rot),					
+		.hsync(hsync), .vsync(vsync), .rgb(rgb_out), .colision(colision)
+	);
 				
-				.hsync(hsync), .vsync(vsync), .rgb(rgb_out), .colision(colision)
-				);
-				
-				
-
 endmodule

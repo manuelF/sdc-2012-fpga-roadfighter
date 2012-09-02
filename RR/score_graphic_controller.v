@@ -22,6 +22,8 @@ module score_graphic_controller(
     input pclk,
 	 input [9:0] pixel_x,
     input [9:0] pixel_y,
+	 input [9:0] xcoord_ini,
+	 input [9:0] ycoord_ini,
     output [2:0] rgb,
 	 output on
     );
@@ -45,5 +47,6 @@ module score_graphic_controller(
 	assign rgb[1]=score_line[score_pixel_x*3+1];
 	assign rgb[0]=score_line[score_pixel_x*3+0];
 	
-	assign on = (pixel_y <= 40+11 && pixel_y >= 40 && pixel_x<=43);
+	assign on = (pixel_y <= ycoord_ini+11 && pixel_y >= ycoord_ini && 
+					 pixel_x <= xcoord_ini+43 && pixel_x >= xcoord_ini);
 endmodule

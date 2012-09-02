@@ -22,7 +22,7 @@ module main(
     input wire clk, reset,
 	 input wire drop,
 	 input wire left, right,
-	 input wire upsig, upsig_fast,
+	 input wire upsig, upsig_fast, alive,
     output wire hsync, vsync,
     output wire [2:0] rgb,
 	 output wire [7:0] initial_dbg,
@@ -123,12 +123,14 @@ module main(
 		.update_signal(upsig_fast), .reset(reset));
 
 	score_graphic_controller scoreboard_message (
-		.pixel_x(pixel_x), .pixel_y(pixel_y), .pclk(clk), .rgb(rgb_score), .on(on_score)
+		.pixel_x(pixel_x), .pixel_y(pixel_y), .pclk(clk), .rgb(rgb_score), .on(on_score),
+		.xcoord_ini(0), .ycoord_ini(40)
 	);
 
 	scoreboard_display scoreboard_digits (
-		.xcoord(pixel_x), .ycoord(pixel_y), .xcoord_ini(10), .ycoord_ini(100),
-		.on(on_scoreboard), .rgb(rgb_scoreboard), .reset(reset), .clk(clk)
+		.xcoord(pixel_x), .ycoord(pixel_y), .xcoord_ini(46), .ycoord_ini(42),
+		.on(on_scoreboard), .rgb(rgb_scoreboard), .reset(reset), .clk(clk),
+		.en(alive)
 	);
 
 	graphic_controller #(9) gc (
