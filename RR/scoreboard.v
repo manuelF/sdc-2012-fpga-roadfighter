@@ -31,7 +31,7 @@ module scoreboard_display(
 	localparam 	MAX_DIGITS = 6,
 					DIGIT_CONT = 4;
 
-	wire [DIGIT_CONT-1:0] score [MAX_DIGITS-1:0];
+	wire [DIGIT_CONT-1:0] score [MAX_DIGITS:0];
 	/*
 	assign score[0] = 1;
 	assign score[1] = 2;
@@ -81,9 +81,11 @@ module scoreboard_display(
 				tick_next = 0;
 			end
 
-	assign ups[0] = tick_reg;
+	assign ups[0] = 0;
+	assign ups[1] = tick_reg;
+
 	generate
-		for(i = 0; i < MAX_DIGITS; i = i+1)
+		for(i = 1; i < MAX_DIGITS; i = i+1)
 			begin: dec_counter_gen
 				dec_counter dec_counter_inst (
 					 .clk(clk),.reset(reset),.up(ups[i]),
