@@ -48,5 +48,6 @@ module score_graphic_controller(
 	assign rgb[0]=score_line[score_pixel_x*3+0];
 	
 	assign on = (pixel_y <= ycoord_ini+11 && pixel_y >= ycoord_ini && 
-					 pixel_x <= xcoord_ini+43 && pixel_x >= xcoord_ini);
+					 pixel_x <= xcoord_ini+43 && pixel_x >= xcoord_ini
+					 && rgb == 3'b111);
 endmodule
