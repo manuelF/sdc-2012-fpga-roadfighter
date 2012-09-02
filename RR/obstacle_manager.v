@@ -21,7 +21,7 @@
 module obstacle_manager(
 	input wire clk, reset,
 	input wire drop,
-	input wire upsig,
+	input wire upsig, left, right,
 	output wire [6-1:0] obstacle_on,
 	output wire [(6*8)-1:0] obstacle_x,
 	output wire [(6*10)-1:0] obstacle_y,
@@ -43,16 +43,39 @@ module obstacle_manager(
 		else
 			contar <= contar_next;
 	
+	reg [8:0] leftc_reg, rightc_reg;
+	wire [8:0] leftc_next, rightc_next;
+
+	always @(posedge clk, posedge reset)
+		if(reset)
+			leftc_reg <= 0;
+		else if(left)
+			leftc_reg <= leftc_next;
+
+	assign leftc_next = leftc_reg + 307;
+	
+	always @(posedge clk, posedge reset)
+		if(reset)
+			rightc_reg <= 0;
+		else if(right)
+			rightc_reg <= rightc_next;
+
+	assign rightc_next = rightc_reg + 651;
+	
+	wire [8:0] leftc, rightc;
+
+	assign leftc = leftc_reg; 
+	assign rightc = rightc_reg; 
+
 	assign contar_next = contar +1;
 
-	reg [6:0] init_reg;	
-	always@ (posedge clk)
-	begin
-		if(drop)
-			init_reg <= contar[26:20];
-	end
+	wire[18:0] init_reg_calc;	
+	wire [7:0] init_reg;
+	
+	assign init_reg_calc = contar[26:18] + leftc[4:2] - rightc[5:1];
+	
 	assign initial_dbg = init_reg;
-
+	assign init_reg = init_reg_calc[7:0];
 /////////////////////////////////////////////////////////
 	
 	//El 1'b0 se pone porque sino aparece un heisenbug raro en el que un auto no se ve y causa colisiones invisibles.

@@ -37,7 +37,7 @@ module game(
 	db_fsm db2 ( .clk(clk), .reset(reset), .sw(right), .db(go_right) );
 
 	/* ACELERACION */
-	localparam ACCELTOPE = 10*25000000;
+	localparam ACCELTOPE = 8*25000000;
 	wire accelerate; 
 	
 	reg [29:0] accelerate_reg, accelerate_next;
@@ -53,13 +53,13 @@ module game(
 		else if(start_reg)
 			accelerate_next = accelerate_reg + 1;
 		else
-			accelerate_next = accelerate_next;
+			accelerate_next = accelerate_reg;
 	assign accelerate = accelerate_reg >= ACCELTOPE;
 	/* END ACELERACION */
 	
 	wire upsig, upsig_fast;
 
-	localparam ACCELDEC = 5000;
+	localparam ACCELDEC = 7000;
 	
 	/* INCREMENTO DE UPSIG */
 	localparam TOPE = 17'b11111111111111111;
@@ -98,13 +98,13 @@ module game(
 			end
 	always @*
 	begin
-		if(upsig_fast_reg >= tope_reg-9000)
+		if(upsig_fast_reg >= (7*tope_reg/8))
 			upsig_fast_next = 0;
 		else
 			upsig_fast_next = upsig_fast_reg+1;
 	end	
 
-	assign upsig_fast = upsig_fast_reg >= tope_reg-9000;
+	assign upsig_fast = upsig_fast_reg >= (7*tope_reg/8);
 
 	wire run;
 	assign run = upsig & !colision;
@@ -123,7 +123,7 @@ module game(
 	assign rgb = rgb_out;
 
 	localparam DROPRATE = 25;
-	localparam DROPSYNC = 25'b0110010101011110111110101;
+	localparam DROPSYNC = 25'b0110010101010010111110101;//25'b0110010101011110111110101;
 
 	reg [DROPRATE:0] drop_reg,drop_next;
 
@@ -137,7 +137,7 @@ module game(
 	
 	always @*
 		if(accelerate)
-			dropsync_next = dropsync_reg - 8*ACCELDEC;
+			dropsync_next = dropsync_reg - 128*ACCELDEC;
 		else
 			dropsync_next = dropsync_reg;
 	/* FIN INCREMENTO DROPSYNC */
