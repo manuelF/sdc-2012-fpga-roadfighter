@@ -88,35 +88,4 @@ car_bitmap autito (
 		right_bound >= pixel_x[7:0] && pixel_x[7:0] >= left_bound && 
 		pixel_y <= lower_bound && pixel_y >= upper_bound ) && rgb != 3'b000;
 
-/*
-
-	car_memory cm (
-    .xcoord(local_pixel_x), 
-    .ycoord(local_pixel_y), 
-    .car(owner), 
-    .Rx(rgb[2]), 
-    .Gx(rgb[1]), 
-    .Bx(rgb[0]),
-	 .reset(reset), .pclk(pclk)
-    );
-
-*/
-
-	//Dibuja el auto generico, luces amarillas, pintura roja, y dos bandas blancas
-	/*always @*
-	begin
-		if((local_pixel_x >= 6 && local_pixel_x <= 7) ||
-			(local_pixel_x >= 10 && local_pixel_x <= 11))
-
-			rgb_reg = BLANCO;
-		else if((local_pixel_x <= 3 || local_pixel_x >= 14) &&
-				  local_pixel_y <= 3)
-				  
-			rgb_reg = AMARILLO;
-		else
-			rgb_reg = ROJO;
-	end
-	
-	assign rgb[2:0] = rgb_reg; //3'b100;//car_draw[on && {local_pixel_y;local_pixel_x}];
-	*/
 endmodule

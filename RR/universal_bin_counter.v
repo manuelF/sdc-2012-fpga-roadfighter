@@ -26,6 +26,7 @@ module universal_bin_counter
     input wire en,
     input wire up,
     input wire [N-1:0] d,
+	 input wire [N-1:0] tope,
     input wire syn_clr,
     input wire load,
     output wire max_tick,
@@ -54,7 +55,10 @@ module universal_bin_counter
 			4'b01??:
 				q_next = d;
 			4'b0011:
-				q_next = q_reg+1;
+				if(q_reg < tope)
+					q_next = q_reg+1;
+				else
+					q_next = 0;
 			4'b0010:
 				q_next = q_reg-1;
 			4'b000?:
@@ -64,7 +68,7 @@ module universal_bin_counter
 
 	//Output logic
 	assign q = q_next;
-	assign max_tick = (q == {N{1'b1}}) ? 1'b1 : 1'b0;
+	assign max_tick = (q == tope) ? 1'b1 : 1'b0;
 	assign min_tick = (q == {N{1'b0}}) ? 1'b1 : 1'b0;
 	
 endmodule
