@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module game(
-    input wire clk, reset,
+    input wire clk, reset2,
 	 input wire left, right,
 	 input wire start,
     output wire hsync, vsync,
@@ -27,7 +27,7 @@ module game(
 	 output wire colision,	 
 	 output wire [5:0] total_score
    );
-	
+	wire reset = ~reset2;
 	wire go_left, go_right;
 	db_fsm db1 ( .clk(clk), .reset(reset), .sw(left), .db(go_left) );
 	db_fsm db2 ( .clk(clk), .reset(reset), .sw(right), .db(go_right) );
@@ -96,7 +96,7 @@ module game(
 	always @(posedge clk,posedge reset)
 		if(reset)
 			start_reg <= 0;
-		else if(start)
+		else if(~start) //Invertimos la logica porque el control de sega funciona al reves 
 			start_reg <= 1;
 		else
 			start_reg <= start_next;

@@ -120,7 +120,8 @@ module main(
 	background bg (
 		.pixel_x(pixel_x), .pixel_y(pixel_y), 
 		.rgb(rgb_bg), .clk(clk), 
-		.update_signal(upsig_fast), .reset(reset));
+		.update_signal(upsig_fast), .reset(reset),
+		.alive(alive));
 
 	score_graphic_controller scoreboard_message (
 		.pixel_x(pixel_x), .pixel_y(pixel_y), .pclk(clk), .rgb(rgb_score), .on(on_score),

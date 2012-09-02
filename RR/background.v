@@ -22,6 +22,7 @@ module background(
    input wire [9:0] pixel_x,
 	input wire [9:0] pixel_y,
 	input wire clk, reset, update_signal,
+	input wire alive,
 	output reg [2:0] rgb
 	);
 		
@@ -62,7 +63,10 @@ module background(
 				if(pixel_x >= 10'b0011111000)
 					rgb = BLANCO;
 				else
-					rgb = VERDE;
+					if(alive)
+						rgb = VERDE;
+					else
+						rgb = ROJO;
 			2'b01:
 				if ( ROADMARK_XEND >= pixel_x[7:0] && pixel_x[7:0] >= ROADMARK_XSTART )
 					if ( (pixel_y-scroll_reg) % ROADMARK_YLEN > ROADMARK_YSTGAP)
@@ -75,9 +79,15 @@ module background(
 				if(pixel_x >= 10'b1000000000 && pixel_x <= 10'b1000001000)
 					rgb = BLANCO;
 				else
-					rgb = VERDE;
+					if(alive)
+						rgb = VERDE;
+					else
+						rgb = ROJO;
 			default:
-				rgb = VERDE;
+				if(alive)
+						rgb = VERDE;
+					else
+						rgb = ROJO;
 		endcase
 	end
 
