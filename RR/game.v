@@ -37,7 +37,7 @@ module game(
 	db_fsm db2 ( .clk(clk), .reset(reset), .sw(right), .db(go_right) );
 
 	/* ACELERACION */
-	localparam ACCELTOPE = 8*25000000;
+	localparam ACCELTOPE = 4*25000000;
 	wire accelerate; 
 	
 	reg [29:0] accelerate_reg, accelerate_next;
@@ -59,10 +59,10 @@ module game(
 	
 	wire upsig, upsig_fast;
 
-	localparam ACCELDEC = 7000;
+	localparam ACCELDEC = 3000;
 	
 	/* INCREMENTO DE UPSIG */
-	localparam TOPE = 17'b11111111111111111;
+	localparam TOPE = 17'b11111100110011010;
 
 	reg [17:0] tope_reg, tope_next;
 	always @(posedge clk, posedge reset)
