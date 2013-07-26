@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Proyectos\FPGA\sdc-2012-fpga-roadfighter\speaker\speaker.ncd
+OUTFILE=D:\Proyectos\FPGA\sdc-2012-fpga-roadfighter\speaker\speaker.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=D:\Proyectos\FPGA\sdc-2012-fpga-roadfighter\speaker
+LICENSE=WebPack
+USER_INFO=207618120_0_0_577
