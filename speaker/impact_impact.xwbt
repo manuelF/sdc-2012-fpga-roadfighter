@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=D:\Proyectos\FPGA\sdc-2012-fpga-roadfighter\speaker\impact.xsl
+OUTFILE=D:\Proyectos\FPGA\sdc-2012-fpga-roadfighter\speaker\impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=D:\Proyectos\FPGA\sdc-2012-fpga-roadfighter\speaker
+LICENSE=iMPACT
+USER_INFO=iMPACT
