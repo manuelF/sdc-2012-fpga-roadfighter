@@ -22,7 +22,8 @@
 #NET "left" LOC = "E8" | IOSTANDARD = LVTTL | PULLDOWN ;
 #NET "start" LOC = "D7" | IOSTANDARD = LVTTL | PULLUP ;
 #NET "reset2" LOC = "C7" | IOSTANDARD = LVTTL | PULLUP ;
-NET "speaker" LOC = "C5" | IOSTANDARD = LVTTL;
+NET "speaker" LOC = "E8" | IOSTANDARD = LVTTL;
+NET "speaker2" LOC = "F8" | IOSTANDARD = LVTTL;
 
 #
 ## ==== Clock inputs (CLK) ====

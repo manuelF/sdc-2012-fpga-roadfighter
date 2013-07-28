@@ -20,7 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 module music_box_test(
 		input clock,
-		output speaker
+		output speaker,
+		output speaker2
     );
 
 	reg [31:0] tone;
@@ -45,5 +46,6 @@ module music_box_test(
 	music_handler notes( .clk(clock), .fullnote(fullnote), .speaker(speaker_in) );
 
 	assign speaker = speaker_in;
+	assign speaker2= speaker_in;
 
 endmodule
