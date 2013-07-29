@@ -18,11 +18,10 @@
 #NET "start" LOC = "V4" | IOSTANDARD = LVTTL | PULLDOWN ;
 #NET "reset" LOC = "K17" | IOSTANDARD = LVTTL | PULLDOWN ;
 ## D7 C7 F8 E8
-NET "right" LOC = "F8" | IOSTANDARD = LVTTL | PULLDOWN ;
-NET "left" LOC = "E8" | IOSTANDARD = LVTTL | PULLDOWN ;
-NET "start" LOC = "D7" | IOSTANDARD = LVTTL | PULLUP ;
-NET "reset2" LOC = "C7" | IOSTANDARD = LVTTL | PULLUP ;
-
+NET "right" LOC = "B6" | IOSTANDARD = LVTTL | PULLDOWN ;
+NET "left" LOC = "A6" | IOSTANDARD = LVTTL | PULLDOWN ;
+NET "start" LOC = "E7" | IOSTANDARD = LVTTL | PULLUP ;
+NET "reset2" LOC = "F7" | IOSTANDARD = LVTTL | PULLUP ;
 
 #
 ## ==== Clock inputs (CLK) ====
