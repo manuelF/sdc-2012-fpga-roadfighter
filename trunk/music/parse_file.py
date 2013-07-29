@@ -6,7 +6,7 @@ import fpga2pysynth
 if __name__ == '__main__':
 	#name = sys.argv[1]
 	repeat_loops = int(sys.stdin.readline())
-	parsen = re.compile("(\d+)(\w#?\d+)\s*(\d+)?")
+	parsen = re.compile("(\d+)(\w#?(?:\d+)?)\s*(\d+)?")
 	
 	notes = []
 	for line in sys.stdin.readlines():
