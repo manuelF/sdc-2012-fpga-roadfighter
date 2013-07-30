@@ -22,8 +22,8 @@
 #NET "left" LOC = "E8" | IOSTANDARD = LVTTL | PULLDOWN ;
 #NET "start" LOC = "D7" | IOSTANDARD = LVTTL | PULLUP ;
 #NET "reset2" LOC = "C7" | IOSTANDARD = LVTTL | PULLUP ;
-NET "speaker" LOC = "E8" | IOSTANDARD = LVTTL;
-NET "speaker2" LOC = "F8" | IOSTANDARD = LVTTL;
+#NET "speaker_m" LOC = "E8" | IOSTANDARD = LVTTL;
+NET "speaker_b" LOC = "F8" | IOSTANDARD = LVTTL;
 
 #
 ## ==== Clock inputs (CLK) ====
@@ -93,14 +93,14 @@ NET "clock" LOC = "C9" | IOSTANDARD = LVCMOS33 ;
 #NET "FX2_IO<12>" LOC = "E8" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
 #
 ## The discrete LEDs are shared with the following 8 FX2 connections
-#NET "colision" LOC = "F9" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
-##NET "initial_dbg[1]" LOC = "E9" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
-#NET "total_score[5]" LOC = "D11" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
-#NET "total_score[4]" LOC = "C11" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
-#NET "total_score[3]" LOC = "F11" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
-#NET "total_score[2]" LOC = "E11" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
-#NET "total_score[1]" LOC = "E12" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
-#NET "total_score[0]" LOC = "F12" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
+#NET "speaker_b" LOC = "F9" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
+NET "speaker_m" LOC = "E9" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
+NET "fullnote[5]" LOC = "D11" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
+NET "fullnote[4]" LOC = "C11" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
+NET "fullnote[3]" LOC = "F11" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
+NET "fullnote[2]" LOC = "E11" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
+NET "fullnote[1]" LOC = "E12" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
+NET "fullnote[0]" LOC = "F12" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
 #NET "FX2_IO<21>" LOC = "A13" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
 #NET "FX2_IO<22>" LOC = "B13" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;
 #NET "FX2_IO<23>" LOC = "A14" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8 ;

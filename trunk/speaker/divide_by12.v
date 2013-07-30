@@ -25,7 +25,7 @@ module divide_by12(
 );
 
 reg [2:0] quotient_in;
-reg [2:0] remain_bit3_bit2;
+reg [1:0] remain_bit3_bit2;
 
 assign remain = {remain_bit3_bit2, numer[1:0]}; // the first 2 bits are copied through
 
