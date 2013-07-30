@@ -25,8 +25,8 @@
 *     (c) Copyright 1995-2013 Xilinx, Inc.                                     *
 *     All rights reserved.                                                     *
 *******************************************************************************/
-// You must compile the wrapper file blk_mem_gen_v7_2.v when simulating
-// the core, blk_mem_gen_v7_2. When compiling the wrapper file, be sure to
+// You must compile the wrapper file music_bass.v when simulating
+// the core, music_bass. When compiling the wrapper file, be sure to
 // reference the XilinxCoreLib Verilog simulation library. For detailed
 // instructions, please refer to the "CORE Generator Help".
 
@@ -36,7 +36,7 @@
 
 `timescale 1ns/1ps
 
-module blk_mem_gen_v7_2(
+module music_bass(
   clka,
   addra,
   douta
@@ -76,7 +76,7 @@ output [7 : 0] douta;
     .C_HAS_RSTB(0),
     .C_HAS_SOFTECC_INPUT_REGS_A(0),
     .C_HAS_SOFTECC_OUTPUT_REGS_B(0),
-    .C_INIT_FILE_NAME("blk_mem_gen_v7_2.mif"),
+    .C_INIT_FILE_NAME("music_bass.mif"),
     .C_INITA_VAL("0"),
     .C_INITB_VAL("0"),
     .C_INTERFACE_TYPE(0),

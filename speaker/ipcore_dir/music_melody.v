@@ -25,8 +25,8 @@
 *     (c) Copyright 1995-2013 Xilinx, Inc.                                     *
 *     All rights reserved.                                                     *
 *******************************************************************************/
-// You must compile the wrapper file blk_mem_gen_v7_2.v when simulating
-// the core, blk_mem_gen_v7_2. When compiling the wrapper file, be sure to
+// You must compile the wrapper file music_melody.v when simulating
+// the core, music_melody. When compiling the wrapper file, be sure to
 // reference the XilinxCoreLib Verilog simulation library. For detailed
 // instructions, please refer to the "CORE Generator Help".
 
@@ -36,21 +36,21 @@
 
 `timescale 1ns/1ps
 
-module blk_mem_gen_v7_2(
+module music_melody(
   clka,
   addra,
   douta
 );
 
 input clka;
-input [9 : 0] addra;
+input [7 : 0] addra;
 output [7 : 0] douta;
 
 // synthesis translate_off
 
   BLK_MEM_GEN_V7_2 #(
-    .C_ADDRA_WIDTH(10),
-    .C_ADDRB_WIDTH(10),
+    .C_ADDRA_WIDTH(8),
+    .C_ADDRB_WIDTH(8),
     .C_ALGORITHM(1),
     .C_AXI_ID_WIDTH(4),
     .C_AXI_SLAVE_TYPE(0),
@@ -76,7 +76,7 @@ output [7 : 0] douta;
     .C_HAS_RSTB(0),
     .C_HAS_SOFTECC_INPUT_REGS_A(0),
     .C_HAS_SOFTECC_OUTPUT_REGS_B(0),
-    .C_INIT_FILE_NAME("blk_mem_gen_v7_2.mif"),
+    .C_INIT_FILE_NAME("music_melody.mif"),
     .C_INITA_VAL("0"),
     .C_INITB_VAL("0"),
     .C_INTERFACE_TYPE(0),
@@ -84,8 +84,8 @@ output [7 : 0] douta;
     .C_MEM_TYPE(3),
     .C_MUX_PIPELINE_STAGES(0),
     .C_PRIM_TYPE(1),
-    .C_READ_DEPTH_A(1024),
-    .C_READ_DEPTH_B(1024),
+    .C_READ_DEPTH_A(256),
+    .C_READ_DEPTH_B(256),
     .C_READ_WIDTH_A(8),
     .C_READ_WIDTH_B(8),
     .C_RST_PRIORITY_A("CE"),
@@ -101,8 +101,8 @@ output [7 : 0] douta;
     .C_USE_SOFTECC(0),
     .C_WEA_WIDTH(1),
     .C_WEB_WIDTH(1),
-    .C_WRITE_DEPTH_A(1024),
-    .C_WRITE_DEPTH_B(1024),
+    .C_WRITE_DEPTH_A(256),
+    .C_WRITE_DEPTH_B(256),
     .C_WRITE_MODE_A("WRITE_FIRST"),
     .C_WRITE_MODE_B("WRITE_FIRST"),
     .C_WRITE_WIDTH_A(8),
