@@ -19,7 +19,7 @@ module rr_music(
 	always @(posedge clock) 
 	begin
 		if(fullnote_bass == 8'hFF) 		
-			tone_bass <= 2**25;
+			tone_bass <= 2**21;
 		else
 			tone_bass <= tone_bass+1;
 
@@ -42,7 +42,7 @@ module rr_music(
 	//----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 	music_bass musicbox_bass (
 	  .clka(clock), // input clka
-	  .addra(tone_bass[34:25]), // input [7 : 0] addra
+	  .addra(tone_bass[30:21]), // input [7 : 0] addra
 	  .douta(fullnote_bass) // output [7 : 0] douta
 	);
 	// INST_TAG_END ------ End INSTANTIATION Template ---------
