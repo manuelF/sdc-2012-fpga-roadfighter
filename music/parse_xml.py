@@ -24,13 +24,11 @@ def get_note_data(node):
 	dot = get(node,"dot")
 	if dot: duration += duration/2
 
-	duration *= 4
-	duration -= 1
+	
+	duration *= 2
 	res = ""
-	while duration > 0:
-		res += str(fpga2pysynth.encode_note(note.lower() + alter + octave)) + ",\n"
-		duration -= 1
-	res += "0,\n"
+	res += (str(fpga2pysynth.encode_note(note.lower() + alter + octave)) + ",\n")*duration	
+	res += ("0,\n")*duration
 	return res
 
 dom = parse("onlybass.xml")
