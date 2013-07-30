@@ -25,6 +25,7 @@ def get_note_data(node):
 	if dot: duration += duration/2
 
 	duration *= 4
+	duration -= 1
 	res = ""
 	while duration > 0:
 		res += str(fpga2pysynth.encode_note(note.lower() + alter + octave)) + ",\n"
