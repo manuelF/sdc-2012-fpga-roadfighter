@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="1.7" >
  <header>
-  <DateModified>2012-09-02T14:09:02</DateModified>
+  <DateModified>2013-07-29T17:04:39</DateModified>
   <ModuleName>game</ModuleName>
-  <SummaryTimeStamp>2012-08-29T17:29:26</SummaryTimeStamp>
+  <SummaryTimeStamp>2013-07-26T16:39:39</SummaryTimeStamp>
   <DateInitialized>2012-08-02T23:42:53</DateInitialized>
-  <ImplementationReportsDirectory>C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR\</ImplementationReportsDirectory>
-  <SavedFilePath>C:/Users/Manuel/Desktop/sdc-2012-fpga-roadfighter/RR/iseconfig/game.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/Proyectos/FPGA/sdc-2012-fpga-roadfighter/RR\</ImplementationReportsDirectory>
+  <SavedFilePath>D:/Proyectos/FPGA/sdc-2012-fpga-roadfighter/RR/iseconfig/game.xreport</SavedFilePath>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>
   <viewgroup label="Design Overview" >
-   <view inputState="Unknown" program="implementation" ShowPartitionData="true" type="FPGASummary" file="game_summary.html" label="Summary" >
+   <view inputState="Unknown" program="implementation" ShowPartitionData="true" type="FPGASummary" file="game_summary.html" label="Summary" ExpandClockNets="true" ExpandWarnings="true" >
     <toc-item title="Design Overview" target="Design Overview" />
     <toc-item title="Design Utilization Summary" target="Design Utilization Summary" />
     <toc-item title="Performance Summary" target="Performance Summary" />

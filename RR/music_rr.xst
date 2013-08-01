@@ -1,0 +1,5 @@
+set -tmpdir "D:/Proyectos/FPGA/sdc-2012-fpga-roadfighter/RR/xst/projnav.tmp"
+set -xsthdpdir "D:/Proyectos/FPGA/sdc-2012-fpga-roadfighter/RR/xst"
+elaborate
+-ifn music_rr.prj
+-ifmt mixed

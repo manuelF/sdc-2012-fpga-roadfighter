@@ -1,0 +1,353 @@
+Release 14.2 Drc P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Mon Jul 29 18:40:36 2013
+
+drc -z game.ncd game.pcf
+
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<road_fighter/scoreboard_message/score_memory/U0/xst_blk_mem_generator/
+   gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s3_init.ram/spram.r
+   am.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
+   block:<road_fighter/scoreboard_message/score_memory/U0/xst_blk_mem_generator/
+   gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s3_init.ram/spram.r
+   am.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB1> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB2> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB3> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB4> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB5> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB6> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB7> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB9> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB10> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB11> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB12> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB13> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB17> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB18> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB19> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB20> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB21> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB22> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB23> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB25> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB26> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB27> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB28> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB29> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
+   block:<road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnat
+   ivebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B
+   >:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB6> on
+   block:<road_fighter/obs_5_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB7> on
+   block:<road_fighter/obs_5_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
+   block:<road_fighter/obs_5_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<road_fighter/obs_5_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB22> on
+   block:<road_fighter/obs_5_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB23> on
+   block:<road_fighter/obs_5_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
+   block:<road_fighter/obs_5_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
+   block:<road_fighter/obs_5_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB6> on
+   block:<road_fighter/obs_4_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB7> on
+   block:<road_fighter/obs_4_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
+   block:<road_fighter/obs_4_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<road_fighter/obs_4_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB22> on
+   block:<road_fighter/obs_4_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB23> on
+   block:<road_fighter/obs_4_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
+   block:<road_fighter/obs_4_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
+   block:<road_fighter/obs_4_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB6> on
+   block:<road_fighter/obs_3_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB7> on
+   block:<road_fighter/obs_3_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
+   block:<road_fighter/obs_3_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<road_fighter/obs_3_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB22> on
+   block:<road_fighter/obs_3_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB23> on
+   block:<road_fighter/obs_3_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
+   block:<road_fighter/obs_3_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
+   block:<road_fighter/obs_3_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB6> on
+   block:<road_fighter/obs_2_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB7> on
+   block:<road_fighter/obs_2_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
+   block:<road_fighter/obs_2_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<road_fighter/obs_2_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB22> on
+   block:<road_fighter/obs_2_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB23> on
+   block:<road_fighter/obs_2_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
+   block:<road_fighter/obs_2_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
+   block:<road_fighter/obs_2_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB6> on
+   block:<road_fighter/obs_1_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB7> on
+   block:<road_fighter/obs_1_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
+   block:<road_fighter/obs_1_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<road_fighter/obs_1_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB22> on
+   block:<road_fighter/obs_1_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB23> on
+   block:<road_fighter/obs_1_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
+   block:<road_fighter/obs_1_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
+   block:<road_fighter/obs_1_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB6> on
+   block:<road_fighter/obs_0_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB7> on
+   block:<road_fighter/obs_0_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
+   block:<road_fighter/obs_0_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<road_fighter/obs_0_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB22> on
+   block:<road_fighter/obs_0_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB23> on
+   block:<road_fighter/obs_0_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
+   block:<road_fighter/obs_0_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
+   block:<road_fighter/obs_0_gcont/autito/U0/xst_blk_mem_generator/gnativebmg.na
+   tive_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAMB16
+   _RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB6> on
+   block:<road_fighter/p1_gcontroller/autito/U0/xst_blk_mem_generator/gnativebmg
+   .native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAM
+   B16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB7> on
+   block:<road_fighter/p1_gcontroller/autito/U0/xst_blk_mem_generator/gnativebmg
+   .native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAM
+   B16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
+   block:<road_fighter/p1_gcontroller/autito/U0/xst_blk_mem_generator/gnativebmg
+   .native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAM
+   B16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<road_fighter/p1_gcontroller/autito/U0/xst_blk_mem_generator/gnativebmg
+   .native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAM
+   B16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB22> on
+   block:<road_fighter/p1_gcontroller/autito/U0/xst_blk_mem_generator/gnativebmg
+   .native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAM
+   B16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB23> on
+   block:<road_fighter/p1_gcontroller/autito/U0/xst_blk_mem_generator/gnativebmg
+   .native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAM
+   B16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
+   block:<road_fighter/p1_gcontroller/autito/U0/xst_blk_mem_generator/gnativebmg
+   .native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAM
+   B16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
+   block:<road_fighter/p1_gcontroller/autito/U0/xst_blk_mem_generator/gnativebmg
+   .native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/spram.ram.B>:<RAM
+   B16_RAMB16B>.
+DRC detected 0 errors and 86 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

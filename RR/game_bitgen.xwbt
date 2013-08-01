@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\game.ncd
-OUTFILE=C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR\game.bit
+INFILE=D:\Proyectos\FPGA\sdc-2012-fpga-roadfighter\RR\game.ncd
+OUTFILE=D:\Proyectos\FPGA\sdc-2012-fpga-roadfighter\RR\game.bit
 FAMILY=Spartan3E
 PART=xc3s500e-4fg320
-WORKINGDIR=C:\Users\Manuel\Desktop\sdc-2012-fpga-roadfighter\RR
+WORKINGDIR=D:\Proyectos\FPGA\sdc-2012-fpga-roadfighter\RR
 LICENSE=WebPack
 USER_INFO=207618120_0_0_577

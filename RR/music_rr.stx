@@ -1,0 +1,85 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to D:/Proyectos/FPGA/sdc-2012-fpga-roadfighter/RR/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Parameter xsthdpdir set to D:/Proyectos/FPGA/sdc-2012-fpga-roadfighter/RR/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "letter_memory.v" in library work
+Compiling verilog file "scoreboard.v" in library work
+Module <letter_memory> compiled
+Compiling verilog file "obstacle.v" in library work
+Module <scoreboard_display> compiled
+Compiling verilog file "colisioneer.v" in library work
+Module <obstacle> compiled
+Compiling verilog file "vga_sync.v" in library work
+Module <colisioneer> compiled
+Compiling verilog file "score_graphic_controller.v" in library work
+Module <vga_sync> compiled
+Compiling verilog file "player.v" in library work
+Module <score_graphic_controller> compiled
+Compiling verilog file "obstacle_manager.v" in library work
+Module <player> compiled
+Compiling verilog file "graphic_controller.v" in library work
+Module <obstacle_manager> compiled
+Compiling verilog file "graphic_car_controller.v" in library work
+Module <graphic_controller> compiled
+Compiling verilog file "colision_manager.v" in library work
+Module <graphic_car_controller> compiled
+Compiling verilog file "background.v" in library work
+Module <colisionManager> compiled
+Compiling verilog file "universal_bin_counter.v" in library work
+Module <background> compiled
+Compiling verilog file "main.v" in library work
+Module <universal_bin_counter> compiled
+Compiling verilog file "db-fsm.v" in library work
+Module <main> compiled
+Compiling verilog file "game.v" in library work
+Module <db_fsm> compiled
+Compiling verilog file "divide_by12.v" in library work
+Module <game> compiled
+Compiling verilog file "dec_counter.v" in library work
+Module <divide_by12> compiled
+Compiling verilog file "music_box.v" in library work
+Module <dec_counter> compiled
+Compiling verilog file "speaker.v" in library work
+Module <music_handler> compiled
+Compiling verilog file "ipcore_dir/car_bitmap_synth.v" in library work
+Module <speaker> compiled
+Compiling verilog file "ipcore_dir/score_bitmap_synth.v" in library work
+Module <car_bitmap> compiled
+Compiling verilog file "ipcore_dir/music_bass_synth.v" in library work
+Module <score_bitmap> compiled
+Compiling verilog file "ipcore_dir/music_melody_synth.v" in library work
+Module <music_bass> compiled
+Compiling verilog file "music_rr.v" in library work
+Module <music_melody> compiled
+Module <rr_music> compiled
+No errors in compilation
+Analysis of file <"music_rr.prj"> succeeded.
+ 
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.26 secs
+ 
+--> 
+
+Total memory usage is 212412 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
