@@ -23,8 +23,8 @@ NET "left" LOC = "A6" | IOSTANDARD = LVTTL | PULLDOWN ;
 NET "start" LOC = "E7" | IOSTANDARD = LVTTL | PULLUP ;
 NET "reset2" LOC = "F7" | IOSTANDARD = LVTTL | PULLUP ;
 
-NET "speaker_bass" LOC = "E8" | IOSTANDARD = LVTTL;
-NET "speaker_melody" LOC = "F8" | IOSTANDARD = LVTTL;
+#NET "speaker_bass" LOC = "E8" | IOSTANDARD = LVTTL;
+#NET "speaker_melody" LOC = "F8" | IOSTANDARD = LVTTL;
  
 
 #

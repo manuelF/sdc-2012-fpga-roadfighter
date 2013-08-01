@@ -52,9 +52,20 @@ module background(
 	end
 
 	always @*
-	begin
-			scroll_next = scroll_reg+1;
-	end
+		scroll_next = scroll_reg+1;
+	
+	//Rio de agua que se mueve.
+	reg [2:0] rgb_water;
+	wire on_water;
+
+	river_drawer river (
+		.pixel_x(pixel_x),
+		.pixel_y(pixel_y),
+		.clk(clk),
+		.update_signal(update_signal),
+		.is_on(on_water),
+		.reset(reset)
+	);
 	
 	always@*
 	begin
@@ -62,11 +73,15 @@ module background(
 			2'b00: // Primera parte del fondo
 				if(pixel_x >= 10'b0011111000)
 					rgb = BLANCO;
+				else if(on_water)
+					rgb = AZUL;
 				else
-					if(alive)
-						rgb = VERDE;
-					else
-						rgb = ROJO;
+					begin
+						if(alive)
+							rgb = VERDE;
+						else
+							rgb = ROJO;
+					end
 			2'b01:
 				if ( ROADMARK_XEND >= pixel_x[7:0] && pixel_x[7:0] >= ROADMARK_XSTART )
 					if ( (pixel_y-scroll_reg) % ROADMARK_YLEN > ROADMARK_YSTGAP)
