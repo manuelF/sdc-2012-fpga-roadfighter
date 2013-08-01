@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj RR -o D:/Proyectos/FPGA/sdc-2012-fpga-roadfighter/RR/music_box_test.tfi -lib work D:/Proyectos/FPGA/sdc-2012-fpga-roadfighter/RR//music_box_test.v -module music_box_test -template C:/Xilinx/14.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 
