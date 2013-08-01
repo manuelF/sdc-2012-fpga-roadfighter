@@ -3,8 +3,7 @@
 module rr_music(
 		input clock,
 		output speaker_b,
-		output speaker_m,
-		output [5:0] fullnote
+		output speaker_m
     );
 
 	reg [40:0] tone_bass;
@@ -61,8 +60,6 @@ module rr_music(
 	
 	music_handler notes_melody( .clk(clock), .fullnote(fullnote_melody), .speaker(speaker_melody) );
 	assign speaker_m = speaker_melody;
-
-	assign fullnote = fullnote_bass[5:0];
 
 endmodule
 
