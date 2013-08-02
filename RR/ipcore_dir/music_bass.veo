@@ -63,7 +63,7 @@
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 music_bass your_instance_name (
   .clka(clka), // input clka
-  .addra(addra), // input [7 : 0] addra
+  .addra(addra), // input [11 : 0] addra
   .douta(douta) // output [7 : 0] douta
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------

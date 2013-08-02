@@ -44,9 +44,10 @@ Setup/Hold to clock clk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-left        |    2.710(R)|   -0.676(R)|clk_BUFGP         |   0.000|
-right       |    1.872(R)|    0.030(R)|clk_BUFGP         |   0.000|
-start       |    1.087(R)|    0.349(R)|clk_BUFGP         |   0.000|
+left        |    1.410(R)|    0.119(R)|clk_BUFGP         |   0.000|
+reset2      |    6.525(R)|   -1.032(R)|clk_BUFGP         |   0.000|
+right       |    1.002(R)|    0.456(R)|clk_BUFGP         |   0.000|
+start       |    1.740(R)|   -0.181(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -54,20 +55,20 @@ Clock clk to Pad
               | clk (edge) |                  | Clock  |
 Destination   |   to PAD   |Internal Clock(s) | Phase  |
 --------------+------------+------------------+--------+
-colision      |   19.235(R)|clk_BUFGP         |   0.000|
-hsync         |    8.473(R)|clk_BUFGP         |   0.000|
-rgb<0>        |   14.113(R)|clk_BUFGP         |   0.000|
-rgb<1>        |   14.048(R)|clk_BUFGP         |   0.000|
-rgb<2>        |   14.097(R)|clk_BUFGP         |   0.000|
-speaker_bass  |   20.911(R)|clk_BUFGP         |   0.000|
-speaker_melody|   20.854(R)|clk_BUFGP         |   0.000|
-total_score<0>|    7.935(R)|clk_BUFGP         |   0.000|
-total_score<1>|    7.859(R)|clk_BUFGP         |   0.000|
-total_score<2>|    7.556(R)|clk_BUFGP         |   0.000|
-total_score<3>|    7.560(R)|clk_BUFGP         |   0.000|
-total_score<4>|    7.541(R)|clk_BUFGP         |   0.000|
-total_score<5>|    7.542(R)|clk_BUFGP         |   0.000|
-vsync         |    7.795(R)|clk_BUFGP         |   0.000|
+colision      |   18.045(R)|clk_BUFGP         |   0.000|
+hsync         |    8.384(R)|clk_BUFGP         |   0.000|
+rgb<0>        |   14.600(R)|clk_BUFGP         |   0.000|
+rgb<1>        |   13.610(R)|clk_BUFGP         |   0.000|
+rgb<2>        |   13.610(R)|clk_BUFGP         |   0.000|
+speaker_bass  |   20.617(R)|clk_BUFGP         |   0.000|
+speaker_melody|   20.347(R)|clk_BUFGP         |   0.000|
+total_score<0>|    8.293(R)|clk_BUFGP         |   0.000|
+total_score<1>|    7.989(R)|clk_BUFGP         |   0.000|
+total_score<2>|    8.239(R)|clk_BUFGP         |   0.000|
+total_score<3>|    8.137(R)|clk_BUFGP         |   0.000|
+total_score<4>|    7.804(R)|clk_BUFGP         |   0.000|
+total_score<5>|    7.524(R)|clk_BUFGP         |   0.000|
+vsync         |    9.082(R)|clk_BUFGP         |   0.000|
 --------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -75,18 +76,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   18.960|         |         |         |
+clk            |   18.582|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Mon Jul 29 18:40:31 2013 
+Analysis completed Fri Aug 02 19:02:58 2013 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 223 MB
+Peak Memory Usage: 204 MB
 
 
 

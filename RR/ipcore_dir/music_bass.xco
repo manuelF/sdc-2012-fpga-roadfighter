@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.2
-# Date: Mon Jul 29 21:03:20 2013
+# Date: Fri Aug 02 20:20:37 2013
 #
 ##############################################################
 #
@@ -46,7 +46,7 @@ CSET axi_id_width=4
 CSET axi_slave_type=Memory_Slave
 CSET axi_type=AXI4_Full
 CSET byte_size=9
-CSET coe_file=D:\Proyectos\FPGA\sdc-2012-fpga-roadfighter\RR\music.coe
+CSET coe_file="C:\Users\Mainframe 3\fpga\music\chrono_bass_full.coe"
 CSET collision_warnings=ALL
 CSET component_name=music_bass
 CSET disable_collision_warnings=false
@@ -81,7 +81,7 @@ CSET register_porta_output_of_memory_primitives=false
 CSET register_portb_output_of_memory_core=false
 CSET register_portb_output_of_memory_primitives=false
 CSET register_portb_output_of_softecc=false
-CSET remaining_memory_locations=0
+CSET remaining_memory_locations=FF
 CSET reset_memory_latch_a=false
 CSET reset_memory_latch_b=false
 CSET reset_priority_a=CE
@@ -95,7 +95,7 @@ CSET use_regcea_pin=false
 CSET use_regceb_pin=false
 CSET use_rsta_pin=false
 CSET use_rstb_pin=false
-CSET write_depth_a=256
+CSET write_depth_a=2400
 CSET write_width_a=8
 CSET write_width_b=8
 # END Parameters
@@ -103,4 +103,4 @@ CSET write_width_b=8
 MISC pkg_timestamp=2012-06-25T21:54:09Z
 # END Extra information
 GENERATE
-# CRC: 4462f01a
+# CRC: 9446bd2d

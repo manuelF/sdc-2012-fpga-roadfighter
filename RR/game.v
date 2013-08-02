@@ -25,11 +25,11 @@ module game(
     output wire hsync, vsync,
     output wire [2:0] rgb,
 	 output wire colision,	 
-	 output wire [5:0] total_score /*,
+	 output wire [5:0] total_score,
 	 output wire speaker_bass,
-	 output wire speaker_melody */
+	 output wire speaker_melody
    );
-	
+	//Por defecto, el joystick de sega manda 1 en low, y 0 en high
 	wire reset = ~reset2;
 	wire go_left, go_right;
 
@@ -200,8 +200,8 @@ module game(
 		.clk(clk), .reset(reset), .upsig(run), .upsig_fast(upsig_fast & ~colision),
 		.drop((drop_reg >= dropsync_reg) & ~colision & start_reg),  .alive(~colision & start_reg),
 		.left(go_left), .right(go_right),					
-		.hsync(hsync), .vsync(vsync), .rgb(rgb_out), .colision(colision) /*,
-		.speaker_bass(speaker_bass), .speaker_melody(speaker_melody)*/
+		.hsync(hsync), .vsync(vsync), .rgb(rgb_out), .colision(colision),
+		.speaker_bass(speaker_bass), .speaker_melody(speaker_melody)
 	);
 				
 endmodule

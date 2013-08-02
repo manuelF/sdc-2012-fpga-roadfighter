@@ -26,10 +26,9 @@ module main(
     output wire hsync, vsync,
     output wire [2:0] rgb,
 	 output wire [7:0] initial_dbg,
-	 output wire colision/*,
+	 output wire colision,
 	 output wire speaker_bass,
 	 output wire speaker_melody
-*/	 
    );
 
    //signal declaration
@@ -192,12 +191,10 @@ module main(
    assign rgb = (video_on) ? rgb_reg : 3'b0;
 	
 	// -------------------------------------------------------------------------
-	/*
 	rr_music music_jukebox(
 		.clock(clk),
 		.speaker_b(speaker_bass),
 		.speaker_m(speaker_melody),
-		.enabled(alive)
+		.enabled(alive), .reset(reset)
     );
-	*/
 endmodule

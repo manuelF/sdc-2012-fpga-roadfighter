@@ -108,9 +108,8 @@ ARCHITECTURE music_melody_synth_ARCH OF music_melody_synth IS
 COMPONENT music_melody_exdes 
   PORT (
       --Inputs - Port A
-    ENA            : IN STD_LOGIC;  --opt port
-    ADDRA          : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    DOUTA          : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    ADDRA          : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+    DOUTA          : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     CLKA       : IN STD_LOGIC
 
 
@@ -121,11 +120,9 @@ END COMPONENT;
 
   SIGNAL CLKA: STD_LOGIC := '0';
   SIGNAL RSTA: STD_LOGIC := '0';
-  SIGNAL ENA: STD_LOGIC := '0';
-  SIGNAL ENA_R: STD_LOGIC := '0';
-  SIGNAL ADDRA: STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
-  SIGNAL ADDRA_R: STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
-  SIGNAL DOUTA: STD_LOGIC_VECTOR(15 DOWNTO 0);
+  SIGNAL ADDRA: STD_LOGIC_VECTOR(11 DOWNTO 0) := (OTHERS => '0');
+  SIGNAL ADDRA_R: STD_LOGIC_VECTOR(11 DOWNTO 0) := (OTHERS => '0');
+  SIGNAL DOUTA: STD_LOGIC_VECTOR(7 DOWNTO 0);
   SIGNAL CHECKER_EN : STD_LOGIC:='0';
   SIGNAL CHECKER_EN_R : STD_LOGIC:='0';
   SIGNAL STIMULUS_FLOW : STD_LOGIC_VECTOR(22 DOWNTO 0) := (OTHERS =>'0');
@@ -190,7 +187,6 @@ STATUS(7 DOWNTO 0) <= ISSUE_FLAG_STATUS;
                 CLK => clk_in_i,
             	RST => RSTA,
                 ADDRA  => ADDRA,
-                ENA => ENA,
 				DATA_IN => DOUTA,
 				STATUS => ISSUE_FLAG(0)
              );
@@ -228,11 +224,9 @@ STATUS(7 DOWNTO 0) <= ISSUE_FLAG_STATUS;
       BEGIN
         IF(RISING_EDGE(CLKA)) THEN
 		  IF(RESET_SYNC_R3='1') THEN
-            ENA_R <= '0' AFTER 50 ns;
           
 
            ELSE
-          ENA_R <= ENA AFTER 50 ns;
 
          END IF;
 	    END IF;
@@ -253,7 +247,6 @@ STATUS(7 DOWNTO 0) <= ISSUE_FLAG_STATUS;
 
     BMG_PORT: music_melody_exdes PORT MAP ( 
       --Port A
-      ENA        => ENA_R,
       ADDRA      => ADDRA_R,
       DOUTA      => DOUTA,
       CLKA       => CLKA
