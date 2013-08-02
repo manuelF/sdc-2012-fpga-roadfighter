@@ -3,14 +3,14 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Reading design: game.prj
 
@@ -107,7 +107,15 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
+Compiling verilog file "divide_by12.v" in library work
+Compiling verilog file "music_box.v" in library work
+Module <divide_by12> compiled
+Compiling verilog file "speaker.v" in library work
+Module <music_handler> compiled
+Compiling verilog file "music_rr.v" in library work
+Module <speaker> compiled
 Compiling verilog file "letter_memory.v" in library work
+Module <rr_music> compiled
 Compiling verilog file "scoreboard.v" in library work
 Module <letter_memory> compiled
 Compiling verilog file "obstacle.v" in library work
@@ -138,25 +146,21 @@ Compiling verilog file "db-fsm.v" in library work
 Module <main> compiled
 Compiling verilog file "game.v" in library work
 Module <db_fsm> compiled
-Compiling verilog file "divide_by12.v" in library work
-Module <game> compiled
 Compiling verilog file "dec_counter.v" in library work
-Module <divide_by12> compiled
-Compiling verilog file "music_box.v" in library work
+Module <game> compiled
+Compiling verilog file "river_drawer.v" in library work
 Module <dec_counter> compiled
-Compiling verilog file "speaker.v" in library work
-Module <music_handler> compiled
 Compiling verilog file "ipcore_dir/car_bitmap_synth.v" in library work
-Module <speaker> compiled
+Module <river_drawer> compiled
 Compiling verilog file "ipcore_dir/score_bitmap_synth.v" in library work
 Module <car_bitmap> compiled
-Compiling verilog file "ipcore_dir/music_bass_synth.v" in library work
+Compiling verilog file "ipcore_dir/river_offsets_synth.v" in library work
 Module <score_bitmap> compiled
+Compiling verilog file "ipcore_dir/music_bass_synth.v" in library work
+Module <river_offsets> compiled
 Compiling verilog file "ipcore_dir/music_melody_synth.v" in library work
 Module <music_bass> compiled
-Compiling verilog file "music_rr.v" in library work
 Module <music_melody> compiled
-Module <rr_music> compiled
 No errors in compilation
 Analysis of file <"game.prj"> succeeded.
  
@@ -249,7 +253,8 @@ Analyzing hierarchy for module <scoreboard_display> in library <work> with param
 Analyzing hierarchy for module <graphic_controller> in library <work> with parameters.
 	N = "00000000000000000000000000001001"
 
-Analyzing hierarchy for module <rr_music> in library <work>.
+Analyzing hierarchy for module <rr_music> in library <work> with parameters.
+	BPMTOP = "00000000000001111111001010000001"
 
 Analyzing hierarchy for module <obstacle> in library <work> with parameters.
 	ROADTRACK_HEIGHT = "00000000000000000000000111100000"
@@ -257,6 +262,12 @@ Analyzing hierarchy for module <obstacle> in library <work> with parameters.
 Analyzing hierarchy for module <colisioneer> in library <work> with parameters.
 	CAR_HEIGHT = "00000000000000000000000000100000"
 	CAR_WIDTH = "00000000000000000000000000010000"
+
+Analyzing hierarchy for module <river_drawer> in library <work> with parameters.
+	STREAM_CENTER = "00000000000000000000000001111000"
+	STREAM_LENGTH = "00000000000000000000001000000000"
+	STREAM_OSC = "00000000000000000000000000011110"
+	STREAM_WIDTH = "00000000000000000000000001011010"
 
 Analyzing hierarchy for module <letter_memory> in library <work> with parameters.
 	PIXEL_WIDTH = "00000000000000000000000000011000"
@@ -366,6 +377,14 @@ Analyzing module <background> in library <work>.
 	VERDE = 3'b010
 Module <background> is correct for synthesis.
  
+Analyzing module <river_drawer> in library <work>.
+	STREAM_CENTER = 32'sb00000000000000000000000001111000
+	STREAM_LENGTH = 32'sb00000000000000000000001000000000
+	STREAM_OSC = 32'sb00000000000000000000000000011110
+	STREAM_WIDTH = 32'sb00000000000000000000000001011010
+WARNING:Xst:2211 - "ipcore_dir/river_offsets_synth.v" line 57: Instantiating black box module <river_offsets>.
+Module <river_drawer> is correct for synthesis.
+ 
 Analyzing module <score_graphic_controller> in library <work>.
 INFO:Xst:1433 - Contents of array <score_line> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
 INFO:Xst:1433 - Contents of array <score_line> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
@@ -389,12 +408,12 @@ Analyzing module <letter_memory> in library <work>.
 	PIXEL_WIDTH = 32'sb00000000000000000000000000011000
 	ROWS = 32'sb00000000000000000000000000000111
 	WIDTH = 32'sb00000000000000000000000000001000
-INFO:Xst:1432 - Contents of array <$COND_30> may be accessed with a negative index, causing simulation mismatch.
-INFO:Xst:1433 - Contents of array <$COND_30> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
-INFO:Xst:1432 - Contents of array <$COND_30> may be accessed with a negative index, causing simulation mismatch.
-INFO:Xst:1433 - Contents of array <$COND_30> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
-INFO:Xst:1432 - Contents of array <$COND_30> may be accessed with a negative index, causing simulation mismatch.
-INFO:Xst:1433 - Contents of array <$COND_30> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1432 - Contents of array <$COND_31> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <$COND_31> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1432 - Contents of array <$COND_31> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <$COND_31> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1432 - Contents of array <$COND_31> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <$COND_31> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
 Module <letter_memory> is correct for synthesis.
  
 Analyzing module <dec_counter> in library <work>.
@@ -405,8 +424,9 @@ Analyzing module <graphic_controller> in library <work>.
 Module <graphic_controller> is correct for synthesis.
  
 Analyzing module <rr_music> in library <work>.
-WARNING:Xst:2211 - "ipcore_dir/music_bass_synth.v" line 20: Instantiating black box module <music_bass>.
-WARNING:Xst:2211 - "ipcore_dir/music_melody_synth.v" line 32: Instantiating black box module <music_melody>.
+	BPMTOP = 32'b00000000000001111111001010000001
+WARNING:Xst:2211 - "ipcore_dir/music_bass_synth.v" line 66: Instantiating black box module <music_bass>.
+WARNING:Xst:2211 - "ipcore_dir/music_melody_synth.v" line 80: Instantiating black box module <music_melody>.
 Module <rr_music> is correct for synthesis.
  
 Analyzing module <music_handler> in library <work>.
@@ -495,25 +515,6 @@ Synthesizing Unit <player>.
 	inferred   2 Comparator(s).
 	inferred   8 Multiplexer(s).
 Unit <player> synthesized.
-
-
-Synthesizing Unit <background>.
-    Related source file is "background.v".
-    Found 3-bit 4-to-1 multiplexer for signal <rgb>.
-    Found 11-bit subtractor for signal <$sub0000> created at line 72.
-    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0000> created at line 79.
-    Found 9-bit comparator lessequal for signal <rgb$cmp_ge0001> created at line 71.
-    Found 8-bit comparator greatequal for signal <rgb$cmp_ge0002> created at line 71.
-    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0003> created at line 63.
-    Found 11-bit comparator greater for signal <rgb$cmp_gt0000> created at line 72.
-    Found 10-bit comparator lessequal for signal <rgb$cmp_le0000> created at line 79.
-    Found 6-bit up counter for signal <scroll_reg>.
-    Summary:
-	inferred   1 Counter(s).
-	inferred   1 Adder/Subtractor(s).
-	inferred   6 Comparator(s).
-	inferred   3 Multiplexer(s).
-Unit <background> synthesized.
 
 
 Synthesizing Unit <graphic_controller>.
@@ -644,8 +645,8 @@ Unit <colisionManager> synthesized.
 Synthesizing Unit <score_graphic_controller>.
     Related source file is "score_graphic_controller.v".
     Found 3-bit 132-to-1 multiplexer for signal <rgb>.
-    Found 10-bit adder carry out for signal <COND_24$addsub0000>.
     Found 10-bit adder carry out for signal <COND_25$addsub0000>.
+    Found 10-bit adder carry out for signal <COND_26$addsub0000>.
     Found 11-bit comparator lessequal for signal <on$cmp_le0000> created at line 50.
     Found 11-bit comparator lessequal for signal <on$cmp_le0001> created at line 50.
     Found 10-bit comparator lessequal for signal <score_pixel_x$cmp_le0000> created at line 44.
@@ -687,6 +688,23 @@ WARNING:Xst:653 - Signal <score<0>> is used but never assigned. This sourceless 
 Unit <scoreboard_display> synthesized.
 
 
+Synthesizing Unit <river_drawer>.
+    Related source file is "river_drawer.v".
+WARNING:Xst:646 - Signal <total_offset<9:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 10-bit adder carry out for signal <add0000$addsub0000> created at line 67.
+    Found 10-bit comparator greatequal for signal <is_on$cmp_ge0000> created at line 67.
+    Found 11-bit comparator lessequal for signal <is_on$cmp_le0000> created at line 67.
+    Found 10-bit register for signal <shift_reg>.
+    Found 10-bit subtractor for signal <shift_reg$addsub0000> created at line 46.
+    Found 7-bit adder carry out for signal <stream_pos$addsub0000> created at line 65.
+    Found 10-bit adder for signal <total_offset>.
+    Summary:
+	inferred  10 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <river_drawer> synthesized.
+
+
 Synthesizing Unit <music_handler>.
     Related source file is "music_box.v".
     Found 16x9-bit ROM for signal <clkdivider>.
@@ -700,11 +718,35 @@ Synthesizing Unit <music_handler>.
 Unit <music_handler> synthesized.
 
 
-Synthesizing Unit <rr_music>.
-    Related source file is "music_rr.v".
-    Found 32-bit up counter for signal <tone>.
+Synthesizing Unit <background>.
+    Related source file is "background.v".
+WARNING:Xst:1780 - Signal <rgb_water> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 3-bit 4-to-1 multiplexer for signal <rgb>.
+    Found 11-bit subtractor for signal <$sub0000> created at line 87.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0000> created at line 94.
+    Found 9-bit comparator lessequal for signal <rgb$cmp_ge0001> created at line 86.
+    Found 8-bit comparator greatequal for signal <rgb$cmp_ge0002> created at line 86.
+    Found 10-bit comparator greatequal for signal <rgb$cmp_ge0003> created at line 74.
+    Found 11-bit comparator greater for signal <rgb$cmp_gt0000> created at line 87.
+    Found 10-bit comparator lessequal for signal <rgb$cmp_le0000> created at line 94.
+    Found 6-bit up counter for signal <scroll_reg>.
     Summary:
 	inferred   1 Counter(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+	inferred   3 Multiplexer(s).
+Unit <background> synthesized.
+
+
+Synthesizing Unit <rr_music>.
+    Related source file is "music_rr.v".
+    Found 32-bit up counter for signal <bpm_counter_reg>.
+    Found 1-bit register for signal <bpm_tick_reg>.
+    Found 12-bit up counter for signal <tone_bass>.
+    Found 12-bit up counter for signal <tone_melody>.
+    Summary:
+	inferred   3 Counter(s).
+	inferred   1 D-type flip-flop(s).
 Unit <rr_music> synthesized.
 
 
@@ -761,10 +803,10 @@ Macro Statistics
  4x2-bit multiplier                                    : 7
  5x3-bit multiplier                                    : 1
  8x2-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 109
- 10-bit adder                                          : 27
- 10-bit adder carry out                                : 2
- 10-bit subtractor                                     : 3
+# Adders/Subtractors                                   : 113
+ 10-bit adder                                          : 28
+ 10-bit adder carry out                                : 3
+ 10-bit subtractor                                     : 4
  11-bit subtractor                                     : 1
  12-bit subtractor                                     : 1
  17-bit adder                                          : 1
@@ -780,11 +822,13 @@ Macro Statistics
  5-bit subtractor                                      : 7
  6-bit adder                                           : 1
  6-bit adder carry out                                 : 14
+ 7-bit adder carry out                                 : 1
  8-bit adder                                           : 27
  8-bit addsub                                          : 1
  9-bit adder                                           : 2
  9-bit adder carry out                                 : 1
-# Counters                                             : 9
+# Counters                                             : 11
+ 12-bit up counter                                     : 2
  19-bit up counter                                     : 2
  27-bit up counter                                     : 1
  32-bit up counter                                     : 1
@@ -793,9 +837,9 @@ Macro Statistics
  9-bit down counter                                    : 2
 # Accumulators                                         : 2
  9-bit up accumulator                                  : 2
-# Registers                                            : 44
- 1-bit register                                        : 12
- 10-bit register                                       : 8
+# Registers                                            : 46
+ 1-bit register                                        : 13
+ 10-bit register                                       : 9
  17-bit register                                       : 1
  18-bit register                                       : 2
  26-bit register                                       : 3
@@ -805,13 +849,13 @@ Macro Statistics
  4-bit register                                        : 5
  6-bit register                                        : 2
  8-bit register                                        : 7
-# Comparators                                          : 112
- 10-bit comparator greatequal                          : 38
+# Comparators                                          : 114
+ 10-bit comparator greatequal                          : 39
  10-bit comparator less                                : 7
  10-bit comparator lessequal                           : 12
  11-bit comparator greater                             : 1
  11-bit comparator less                                : 3
- 11-bit comparator lessequal                           : 2
+ 11-bit comparator lessequal                           : 3
  17-bit comparator equal                               : 1
  17-bit comparator less                                : 1
  21-bit comparator greatequal                          : 1
@@ -854,10 +898,12 @@ Optimizing FSM <db2/state_reg/FSM> on signal <state_reg[1:3]> with user encoding
 -------------------
 Reading core <ipcore_dir/car_bitmap.ngc>.
 Reading core <ipcore_dir/score_bitmap.ngc>.
+Reading core <ipcore_dir/river_offsets.ngc>.
 Reading core <ipcore_dir/music_bass.ngc>.
 Reading core <ipcore_dir/music_melody.ngc>.
 Loading core <car_bitmap> for timing and area information for instance <autito>.
 Loading core <score_bitmap> for timing and area information for instance <score_memory>.
+Loading core <river_offsets> for timing and area information for instance <your_instance_name>.
 Loading core <music_bass> for timing and area information for instance <musicbox_bass>.
 Loading core <music_melody> for timing and area information for instance <musicbox_melody>.
 WARNING:Xst:1710 - FF/Latch <car_x_reg_4> (without init value) has a constant value of 0 in block <ob0>. This FF/Latch will be trimmed during the optimization process.
@@ -880,9 +926,10 @@ Macro Statistics
  4x2-bit multiplier                                    : 7
  5x3-bit multiplier                                    : 1
  8x2-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 109
+# Adders/Subtractors                                   : 113
  10-bit adder                                          : 27
- 10-bit adder carry out                                : 2
+ 10-bit adder carry out                                : 3
+ 10-bit subtractor                                     : 1
  17-bit adder                                          : 1
  18-bit adder                                          : 1
  18-bit subtractor                                     : 1
@@ -898,11 +945,13 @@ Macro Statistics
  6-bit adder                                           : 1
  6-bit adder carry out                                 : 14
  6-bit subtractor                                      : 2
- 8-bit adder                                           : 26
+ 7-bit adder carry out                                 : 1
+ 8-bit adder                                           : 27
  8-bit addsub                                          : 1
  8-bit subtractor                                      : 1
  9-bit adder carry out                                 : 1
-# Counters                                             : 9
+# Counters                                             : 11
+ 12-bit up counter                                     : 2
  19-bit up counter                                     : 2
  27-bit up counter                                     : 1
  32-bit up counter                                     : 1
@@ -911,15 +960,15 @@ Macro Statistics
  9-bit down counter                                    : 2
 # Accumulators                                         : 2
  9-bit up accumulator                                  : 2
-# Registers                                            : 371
- Flip-Flops                                            : 371
-# Comparators                                          : 112
- 10-bit comparator greatequal                          : 38
+# Registers                                            : 382
+ Flip-Flops                                            : 382
+# Comparators                                          : 114
+ 10-bit comparator greatequal                          : 39
  10-bit comparator less                                : 7
  10-bit comparator lessequal                           : 12
  11-bit comparator greater                             : 1
  11-bit comparator less                                : 3
- 11-bit comparator lessequal                           : 2
+ 11-bit comparator lessequal                           : 3
  17-bit comparator equal                               : 1
  17-bit comparator less                                : 1
  21-bit comparator greatequal                          : 1
@@ -979,8 +1028,6 @@ Optimizing unit <universal_bin_counter> ...
 
 Optimizing unit <vga_sync> ...
 
-Optimizing unit <background> ...
-
 Optimizing unit <colisioneer> ...
 
 Optimizing unit <letter_memory> ...
@@ -991,13 +1038,19 @@ Optimizing unit <graphic_car_controller> ...
 
 Optimizing unit <score_graphic_controller> ...
 
+Optimizing unit <river_drawer> ...
+
 Optimizing unit <player> ...
 
 Optimizing unit <scoreboard_display> ...
 
 Optimizing unit <music_handler> ...
 
+Optimizing unit <background> ...
+
 Optimizing unit <obstacle_manager> ...
+
+Optimizing unit <rr_music> ...
 
 Optimizing unit <main> ...
 WARNING:Xst:2677 - Node <road_fighter/obs_manager/contar_25> of sequential type is unconnected in block <game>.
@@ -1005,13 +1058,8 @@ WARNING:Xst:2677 - Node <road_fighter/scoreboard_digits/dec_counter_gen[5].dec_c
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block game, actual ratio is 35.
-FlipFlop road_fighter/obs_manager/ob5/car_x_reg_0 has been replicated 1 time(s)
-FlipFlop road_fighter/p1/car_x_reg_0 has been replicated 1 time(s)
-FlipFlop road_fighter/p1/car_x_reg_1 has been replicated 1 time(s)
-FlipFlop road_fighter/p1/car_x_reg_3 has been replicated 1 time(s)
-FlipFlop road_fighter/vsync_unit/h_count_reg_0 has been replicated 1 time(s)
-FlipFlop road_fighter/vsync_unit/h_count_reg_1 has been replicated 2 time(s)
+Found area constraint ratio of 100 (+ 5) on block game, actual ratio is 36.
+FlipFlop road_fighter/vsync_unit/h_count_reg_1 has been replicated 1 time(s)
 FlipFlop road_fighter/vsync_unit/h_count_reg_2 has been replicated 1 time(s)
 FlipFlop road_fighter/vsync_unit/h_count_reg_3 has been replicated 1 time(s)
 FlipFlop road_fighter/vsync_unit/h_count_reg_4 has been replicated 2 time(s)
@@ -1023,8 +1071,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 496
- Flip-Flops                                            : 496
+# Registers                                            : 525
+ Flip-Flops                                            : 525
 
 =========================================================================
 
@@ -1053,36 +1101,39 @@ Design Statistics
 # IOs                              : 19
 
 Cell Usage :
-# BELS                             : 5536
-#      GND                         : 11
-#      INV                         : 237
-#      LUT1                        : 452
-#      LUT2                        : 627
-#      LUT2_D                      : 13
-#      LUT2_L                      : 3
-#      LUT3                        : 751
-#      LUT3_D                      : 19
-#      LUT3_L                      : 19
-#      LUT4                        : 885
+# BELS                             : 5733
+#      GND                         : 12
+#      INV                         : 250
+#      LUT1                        : 474
+#      LUT2                        : 667
+#      LUT2_D                      : 14
+#      LUT2_L                      : 5
+#      LUT3                        : 762
+#      LUT3_D                      : 29
+#      LUT3_L                      : 17
+#      LUT4                        : 887
 #      LUT4_D                      : 72
-#      LUT4_L                      : 33
-#      MUXCY                       : 1240
-#      MUXF5                       : 423
+#      LUT4_L                      : 36
+#      MULT_AND                    : 1
+#      MUXCY                       : 1305
+#      MUXF5                       : 412
 #      MUXF6                       : 180
-#      MUXF7                       : 81
+#      MUXF7                       : 77
 #      MUXF8                       : 33
-#      VCC                         : 11
-#      XORCY                       : 446
-# FlipFlops/Latches                : 496
+#      VCC                         : 12
+#      XORCY                       : 488
+# FlipFlops/Latches                : 525
 #      FD                          : 27
-#      FDC                         : 209
-#      FDCE                        : 148
+#      FDC                         : 207
+#      FDCE                        : 155
 #      FDE                         : 18
-#      FDPE                        : 46
-#      FDR                         : 37
-#      FDS                         : 11
-# RAMS                             : 11
-#      RAMB16_S36_S36              : 11
+#      FDPE                        : 45
+#      FDR                         : 39
+#      FDRE                        : 24
+#      FDS                         : 10
+# RAMS                             : 14
+#      RAMB16_S36_S36              : 10
+#      RAMB16_S4_S4                : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 18
@@ -1097,12 +1148,12 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                     1614  out of   4656    34%  
- Number of Slice Flip Flops:            496  out of   9312     5%  
- Number of 4 input LUTs:               3111  out of   9312    33%  
+ Number of Slices:                     1668  out of   4656    35%  
+ Number of Slice Flip Flops:            525  out of   9312     5%  
+ Number of 4 input LUTs:               3213  out of   9312    34%  
  Number of IOs:                          19
  Number of bonded IOBs:                  19  out of    232     8%  
- Number of BRAMs:                        11  out of     20    55%  
+ Number of BRAMs:                        14  out of     20    70%  
  Number of MULT18X18SIOs:                 2  out of     20    10%  
  Number of GCLKs:                         1  out of     24     4%  
 
@@ -1124,16 +1175,18 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
-Clock Signal                                                               | Clock buffer(FF name)                                                             | Load  |
----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
-clk                                                                        | BUFGP                                                                             | 483   |
-road_fighter/scoreboard_digits/dec_counter_gen[4].dec_counter_inst/over_reg| NONE(road_fighter/scoreboard_digits/dec_counter_gen[5].dec_counter_inst/val_reg_3)| 4     |
-road_fighter/scoreboard_digits/dec_counter_gen[3].dec_counter_inst/over_reg| NONE(road_fighter/scoreboard_digits/dec_counter_gen[4].dec_counter_inst/over_reg) | 5     |
-road_fighter/scoreboard_digits/dec_counter_gen[2].dec_counter_inst/over_reg| NONE(road_fighter/scoreboard_digits/dec_counter_gen[3].dec_counter_inst/over_reg) | 5     |
-road_fighter/scoreboard_digits/dec_counter_gen[1].dec_counter_inst/over_reg| NONE(road_fighter/scoreboard_digits/dec_counter_gen[2].dec_counter_inst/over_reg) | 5     |
-road_fighter/scoreboard_digits/tick_reg                                    | NONE(road_fighter/scoreboard_digits/dec_counter_gen[1].dec_counter_inst/over_reg) | 5     |
----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
+---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                               | Clock buffer(FF name)                                                                                                                                          | Load  |
+---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+clk                                                                        | BUFGP                                                                                                                                                          | 515   |
+road_fighter/music_jukebox/musicbox_bass/N1                                | NONE(road_fighter/music_jukebox/musicbox_bass/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp4x4.ram)  | 2     |
+road_fighter/music_jukebox/musicbox_melody/N1                              | NONE(road_fighter/music_jukebox/musicbox_melody/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp4x4.ram)| 2     |
+road_fighter/scoreboard_digits/dec_counter_gen[4].dec_counter_inst/over_reg| NONE(road_fighter/scoreboard_digits/dec_counter_gen[5].dec_counter_inst/val_reg_3)                                                                             | 4     |
+road_fighter/scoreboard_digits/dec_counter_gen[3].dec_counter_inst/over_reg| NONE(road_fighter/scoreboard_digits/dec_counter_gen[4].dec_counter_inst/over_reg)                                                                              | 5     |
+road_fighter/scoreboard_digits/dec_counter_gen[2].dec_counter_inst/over_reg| NONE(road_fighter/scoreboard_digits/dec_counter_gen[3].dec_counter_inst/over_reg)                                                                              | 5     |
+road_fighter/scoreboard_digits/dec_counter_gen[1].dec_counter_inst/over_reg| NONE(road_fighter/scoreboard_digits/dec_counter_gen[2].dec_counter_inst/over_reg)                                                                              | 5     |
+road_fighter/scoreboard_digits/tick_reg                                    | NONE(road_fighter/scoreboard_digits/dec_counter_gen[1].dec_counter_inst/over_reg)                                                                              | 5     |
+---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -1141,16 +1194,16 @@ Asynchronous Control Signals Information:
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-reset(reset1_INV_0:O)              | NONE(accelerate_reg_0) | 403   |
+reset(reset1_INV_0:O)              | NONE(accelerate_reg_0) | 407   |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 19.642ns (Maximum Frequency: 50.911MHz)
-   Minimum input arrival time before clock: 2.840ns
-   Maximum output required time after clock: 15.021ns
+   Minimum period: 19.678ns (Maximum Frequency: 50.818MHz)
+   Minimum input arrival time before clock: 5.715ns
+   Maximum output required time after clock: 14.786ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -1159,47 +1212,46 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 19.642ns (frequency: 50.911MHz)
-  Total number of paths / destination ports: 1650425 / 850
+  Clock period: 19.678ns (frequency: 50.818MHz)
+  Total number of paths / destination ports: 1386371 / 965
 -------------------------------------------------------------------------
-Delay:               19.642ns (Levels of Logic = 16)
-  Source:            road_fighter/vsync_unit/h_count_reg_1_1 (FF)
-  Destination:       road_fighter/rgb_reg_2 (FF)
+Delay:               19.678ns (Levels of Logic = 15)
+  Source:            road_fighter/vsync_unit/h_count_reg_4_1 (FF)
+  Destination:       road_fighter/rgb_reg_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: road_fighter/vsync_unit/h_count_reg_1_1 to road_fighter/rgb_reg_2
+  Data Path: road_fighter/vsync_unit/h_count_reg_4_1 to road_fighter/rgb_reg_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             11   0.591   1.012  road_fighter/vsync_unit/h_count_reg_1_1 (road_fighter/vsync_unit/h_count_reg_1_1)
-     LUT2:I1->O            1   0.704   0.424  road_fighter/scoreboard_digits/Madd__COND_29_Madd_xor<2>11_SW0 (N135)
-     LUT4_D:I3->O          4   0.704   0.622  road_fighter/scoreboard_digits/Madd__COND_29_Madd_xor<2>11 (road_fighter/scoreboard_digits/_COND_29<2>)
-     LUT4:I2->O            3   0.704   0.566  road_fighter/scoreboard_digits/_COND_29<2>12 (road_fighter/scoreboard_digits/_COND_29<2>12)
-     LUT4:I2->O           38   0.704   1.299  road_fighter/scoreboard_digits/_COND_29<2>23 (road_fighter/scoreboard_digits/_varindex0000<0>)
-     LUT3:I2->O            1   0.704   0.420  road_fighter/scoreboard_digits/digit_glyph/_COND_30<9>141 (road_fighter/scoreboard_digits/digit_glyph/_COND_30<9>141)
-     MUXF5:S->O            2   0.739   0.451  road_fighter/scoreboard_digits/digit_glyph/_COND_30<9>133 (road_fighter/scoreboard_digits/digit_glyph/_COND_30<9>133)
-     LUT4_L:I3->LO         1   0.704   0.104  road_fighter/scoreboard_digits/digit_glyph/_COND_30<9>111111_SW1 (N147)
-     LUT4:I3->O            8   0.704   0.792  road_fighter/scoreboard_digits/digit_glyph/_COND_30<6>1 (road_fighter/scoreboard_digits/digit_glyph/_COND_30<6>)
-     LUT4:I2->O            1   0.704   0.000  road_fighter/scoreboard_digits/digit_glyph/Mmux_Rx_11 (road_fighter/scoreboard_digits/digit_glyph/Mmux_Rx_11)
-     MUXF5:I1->O           1   0.321   0.000  road_fighter/scoreboard_digits/digit_glyph/Mmux_Rx_10_f5 (road_fighter/scoreboard_digits/digit_glyph/Mmux_Rx_10_f5)
-     MUXF6:I1->O           1   0.521   0.424  road_fighter/scoreboard_digits/digit_glyph/Mmux_Rx_9_f6 (road_fighter/scoreboard_digits/digit_glyph/Mmux_Rx_9_f6)
-     LUT4:I3->O            2   0.704   0.451  road_fighter/scoreboard_digits/digit_glyph/_COND_31<4>36 (road_fighter/scoreboard_digits/digit_glyph/_COND_31<4>36)
-     LUT4:I3->O            1   0.704   0.424  road_fighter/scoreboard_digits/on139_SW0 (N133)
+     FDC:C->Q              9   0.591   0.995  road_fighter/vsync_unit/h_count_reg_4_1 (road_fighter/vsync_unit/h_count_reg_4_1)
+     LUT2_L:I0->LO         1   0.704   0.104  road_fighter/scoreboard_digits/Madd__COND_30_Madd_xor<2>11_SW0 (N134)
+     LUT4:I3->O            5   0.704   0.637  road_fighter/scoreboard_digits/Madd__COND_30_Madd_xor<2>11 (road_fighter/scoreboard_digits/_COND_30<2>)
+     LUT4_D:I3->O         10   0.704   0.886  road_fighter/scoreboard_digits/_COND_30<2>6 (road_fighter/scoreboard_digits/N111)
+     LUT4_D:I3->O          9   0.704   0.855  road_fighter/scoreboard_digits/_COND_30<2>123_1 (road_fighter/scoreboard_digits/_COND_30<2>123)
+     LUT3:I2->O            9   0.704   0.824  road_fighter/scoreboard_digits/digit_glyph/COND_31_cmp_eq001311 (road_fighter/scoreboard_digits/digit_glyph/N13)
+     LUT4:I3->O            3   0.704   0.535  road_fighter/scoreboard_digits/digit_glyph/COND_31_and00491 (road_fighter/scoreboard_digits/digit_glyph/COND_31_and0049)
+     LUT4:I3->O            1   0.704   0.424  road_fighter/scoreboard_digits/digit_glyph/_COND_31<9>111111_SW3 (N228)
+     LUT4_D:I3->O          3   0.704   0.535  road_fighter/scoreboard_digits/digit_glyph/_COND_31<9>21 (road_fighter/scoreboard_digits/digit_glyph/_COND_31<9>)
+     LUT4:I3->O            1   0.704   0.424  road_fighter/scoreboard_digits/digit_glyph/Mmux_Rx_12_f5 (road_fighter/scoreboard_digits/digit_glyph/Mmux_Rx_12_f5)
+     LUT4_L:I3->LO         1   0.704   0.104  road_fighter/scoreboard_digits/digit_glyph/_COND_32<4>12 (road_fighter/scoreboard_digits/digit_glyph/_COND_32<4>12)
+     LUT4:I3->O            2   0.704   0.451  road_fighter/scoreboard_digits/digit_glyph/_COND_32<4>36 (road_fighter/scoreboard_digits/digit_glyph/_COND_32<4>36)
+     LUT4:I3->O            1   0.704   0.424  road_fighter/scoreboard_digits/on139_SW0 (N132)
      LUT4:I3->O            3   0.704   0.531  road_fighter/scoreboard_digits/on139 (road_fighter/on_scoreboard)
-     MUXF5:S->O            1   0.739   0.420  road_fighter/rgb_next<2>5_f5 (road_fighter/rgb_next<2>5_f5)
-     MUXF5:S->O            1   0.739   0.000  road_fighter/rgb_next<2> (road_fighter/rgb_next<2>)
-     FDC:D                     0.308          road_fighter/rgb_reg_2
+     MUXF5:S->O            1   0.739   0.420  road_fighter/rgb_next<0>5_f5 (road_fighter/rgb_next<0>5_f5)
+     MUXF5:S->O            1   0.739   0.000  road_fighter/rgb_next<0> (road_fighter/rgb_next<0>)
+     FDC:D                     0.308          road_fighter/rgb_reg_0
     ----------------------------------------
-    Total                     19.642ns (11.702ns logic, 7.940ns route)
-                                       (59.6% logic, 40.4% route)
+    Total                     19.678ns (11.529ns logic, 8.149ns route)
+                                       (58.6% logic, 41.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'road_fighter/scoreboard_digits/dec_counter_gen[4].dec_counter_inst/over_reg'
-  Clock period: 2.731ns (frequency: 366.166MHz)
+  Clock period: 2.780ns (frequency: 359.712MHz)
   Total number of paths / destination ports: 12 / 4
 -------------------------------------------------------------------------
-Delay:               2.731ns (Levels of Logic = 1)
+Delay:               2.780ns (Levels of Logic = 1)
   Source:            road_fighter/scoreboard_digits/dec_counter_gen[5].dec_counter_inst/val_reg_0 (FF)
   Destination:       road_fighter/scoreboard_digits/dec_counter_gen[5].dec_counter_inst/val_reg_0 (FF)
   Source Clock:      road_fighter/scoreboard_digits/dec_counter_gen[4].dec_counter_inst/over_reg rising
@@ -1209,12 +1261,12 @@ Delay:               2.731ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              7   0.591   0.708  road_fighter/scoreboard_digits/dec_counter_gen[5].dec_counter_inst/val_reg_0 (road_fighter/scoreboard_digits/dec_counter_gen[5].dec_counter_inst/val_reg_0)
+     FDC:C->Q              8   0.591   0.757  road_fighter/scoreboard_digits/dec_counter_gen[5].dec_counter_inst/val_reg_0 (road_fighter/scoreboard_digits/dec_counter_gen[5].dec_counter_inst/val_reg_0)
      INV:I->O              1   0.704   0.420  road_fighter/scoreboard_digits/dec_counter_gen[5].dec_counter_inst/val_next<0>1_INV_0 (road_fighter/scoreboard_digits/dec_counter_gen[5].dec_counter_inst/val_next<0>)
      FDC:D                     0.308          road_fighter/scoreboard_digits/dec_counter_gen[5].dec_counter_inst/val_reg_0
     ----------------------------------------
-    Total                      2.731ns (1.603ns logic, 1.128ns route)
-                                       (58.7% logic, 41.3% route)
+    Total                      2.780ns (1.603ns logic, 1.177ns route)
+                                       (57.7% logic, 42.3% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'road_fighter/scoreboard_digits/dec_counter_gen[3].dec_counter_inst/over_reg'
@@ -1306,29 +1358,30 @@ Delay:               2.692ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 7 / 7
+  Total number of paths / destination ports: 64 / 64
 -------------------------------------------------------------------------
-Offset:              2.840ns (Levels of Logic = 2)
-  Source:            left (PAD)
-  Destination:       db1/state_reg_FSM_FFd2 (FF)
+Offset:              5.715ns (Levels of Logic = 3)
+  Source:            reset2 (PAD)
+  Destination:       road_fighter/music_jukebox/tone_melody_0 (FF)
   Destination Clock: clk rising
 
-  Data Path: left to db1/state_reg_FSM_FFd2
+  Data Path: reset2 to road_fighter/music_jukebox/tone_melody_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             3   1.218   0.610  left_IBUF (left_IBUF)
-     LUT4:I1->O            1   0.704   0.000  db1/state_reg_FSM_FFd2-In1 (db1/state_reg_FSM_FFd2-In)
-     FDC:D                     0.308          db1/state_reg_FSM_FFd2
+     IBUF:I->O             4   1.218   0.622  reset2_IBUF (reset2_IBUF)
+     LUT3_D:I2->O          1   0.704   0.595  road_fighter/music_jukebox/update1 (road_fighter/music_jukebox/update)
+     LUT3:I0->O           12   0.704   0.961  road_fighter/music_jukebox/tone_melody_or000024 (road_fighter/music_jukebox/tone_melody_or0000)
+     FDRE:R                    0.911          road_fighter/music_jukebox/tone_melody_0
     ----------------------------------------
-    Total                      2.840ns (2.230ns logic, 0.610ns route)
-                                       (78.5% logic, 21.5% route)
+    Total                      5.715ns (3.537ns logic, 2.178ns route)
+                                       (61.9% logic, 38.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 3423 / 14
 -------------------------------------------------------------------------
-Offset:              15.021ns (Levels of Logic = 9)
+Offset:              14.786ns (Levels of Logic = 9)
   Source:            road_fighter/p1/car_x_reg_5 (FF)
   Destination:       speaker_melody (PAD)
   Source Clock:      clk rising
@@ -1339,29 +1392,29 @@ Offset:              15.021ns (Levels of Logic = 9)
     ----------------------------------------  ------------
      FDPE:C->Q            60   0.591   1.350  road_fighter/p1/car_x_reg_5 (road_fighter/p1/car_x_reg_5)
      LUT4:I1->O           13   0.704   1.062  road_fighter/p1_gcontroller/Madd_right_bound_xor<7>11 (road_fighter/cm/col_0/right_bound_2<7>)
-     LUT2:I1->O            1   0.704   0.000  road_fighter/cm/col_2/Mcompar_colision_cmp_ge0006_lut<7> (road_fighter/cm/col_2/Mcompar_colision_cmp_ge0006_lut<7>)
-     MUXCY:S->O            1   0.864   0.455  road_fighter/cm/col_2/Mcompar_colision_cmp_ge0006_cy<7> (road_fighter/cm/col_2/colision_cmp_ge0006)
-     LUT4_L:I2->LO         1   0.704   0.104  road_fighter/cm/colision4 (road_fighter/cm/colision4)
-     LUT4:I3->O            1   0.704   0.455  road_fighter/cm/colision12 (road_fighter/cm/colision12)
-     LUT4:I2->O            1   0.704   0.424  road_fighter/cm/colision146_SW0 (N343)
-     LUT4:I3->O           15   0.704   1.096  road_fighter/cm/colision146 (colision_OBUF)
+     LUT2:I1->O            1   0.704   0.000  road_fighter/cm/col_0/Mcompar_colision_cmp_ge0006_lut<7> (road_fighter/cm/col_0/Mcompar_colision_cmp_ge0006_lut<7>)
+     MUXCY:S->O            1   0.864   0.455  road_fighter/cm/col_0/Mcompar_colision_cmp_ge0006_cy<7> (road_fighter/cm/col_0/colision_cmp_ge0006)
+     LUT4_L:I2->LO         1   0.704   0.104  road_fighter/cm/colision105 (road_fighter/cm/colision105)
+     LUT4:I3->O            1   0.704   0.455  road_fighter/cm/colision113 (road_fighter/cm/colision113)
+     LUT4_L:I2->LO         1   0.704   0.104  road_fighter/cm/colision146_SW0 (N247)
+     LUT4:I3->O           20   0.704   1.181  road_fighter/cm/colision146 (colision_OBUF)
      LUT3:I1->O            1   0.704   0.420  road_fighter/music_jukebox/speaker_m1 (speaker_melody_OBUF)
      OBUF:I->O                 3.272          speaker_melody_OBUF (speaker_melody)
     ----------------------------------------
-    Total                     15.021ns (9.655ns logic, 5.366ns route)
-                                       (64.3% logic, 35.7% route)
+    Total                     14.786ns (9.655ns logic, 5.131ns route)
+                                       (65.3% logic, 34.7% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 41.00 secs
-Total CPU time to Xst completion: 41.23 secs
+Total REAL time to Xst completion: 52.00 secs
+Total CPU time to Xst completion: 51.57 secs
  
 --> 
 
-Total memory usage is 355932 kilobytes
+Total memory usage is 348424 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   72 (   0 filtered)
+Number of warnings :   75 (   0 filtered)
 Number of infos    :   17 (   0 filtered)
 

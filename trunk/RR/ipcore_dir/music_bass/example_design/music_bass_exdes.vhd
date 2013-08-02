@@ -88,7 +88,7 @@ USE UNISIM.VCOMPONENTS.ALL;
 ENTITY music_bass_exdes IS
   PORT (
       --Inputs - Port A
-    ADDRA          : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    ADDRA          : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
   
     DOUTA          : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     CLKA       : IN STD_LOGIC
@@ -111,7 +111,7 @@ ARCHITECTURE xilinx OF music_bass_exdes IS
   COMPONENT music_bass IS
   PORT (
       --Port A
-    ADDRA      : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    ADDRA      : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
   
     DOUTA      : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 

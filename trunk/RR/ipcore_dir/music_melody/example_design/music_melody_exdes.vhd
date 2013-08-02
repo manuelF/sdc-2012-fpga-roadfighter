@@ -88,10 +88,9 @@ USE UNISIM.VCOMPONENTS.ALL;
 ENTITY music_melody_exdes IS
   PORT (
       --Inputs - Port A
-    ENA            : IN STD_LOGIC;  --opt port
-    ADDRA          : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    ADDRA          : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
   
-    DOUTA          : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    DOUTA          : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     CLKA       : IN STD_LOGIC
 
 
@@ -112,10 +111,9 @@ ARCHITECTURE xilinx OF music_melody_exdes IS
   COMPONENT music_melody IS
   PORT (
       --Port A
-    ENA        : IN STD_LOGIC;  --opt port
-    ADDRA      : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    ADDRA      : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
   
-    DOUTA      : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    DOUTA      : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 
     CLKA       : IN STD_LOGIC
 
@@ -141,7 +139,6 @@ BEGIN
   bmg0 : music_melody
     PORT MAP (
       --Port A
-      ENA        => ENA,
       ADDRA      => ADDRA,
   
       DOUTA      => DOUTA,

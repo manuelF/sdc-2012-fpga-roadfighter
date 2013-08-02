@@ -60,15 +60,13 @@
 
 module music_melody (
   clka,
-  ena,
   addra,
   douta
 );
 
   input clka;
-  input ena;
-  input [7 : 0] addra;
-  output [15 : 0] douta;
+  input [11 : 0] addra;
+  output [7 : 0] douta;
 
   // WARNING: This file provides a module declaration only, it does not support
   //          direct instantiation. Please use an instantiation template (VEO) to

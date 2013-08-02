@@ -55,7 +55,6 @@ isim set radix hex
 wave add /music_melody_tb/status
       wave add  /music_melody_tb/music_melody_synth_inst/BMG_PORT/CLKA
       wave add  /music_melody_tb/music_melody_synth_inst/BMG_PORT/ADDRA
-      wave add  /music_melody_tb/music_melody_synth_inst/BMG_PORT/ENA
       wave add  /music_melody_tb/music_melody_synth_inst/BMG_PORT/DOUTA
 run all
 quit

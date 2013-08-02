@@ -75,7 +75,6 @@ gui_list_add_group -id Wave.1 {music_melody_Group}
       gui_sg_addsignal -group music_melody_Group  /music_melody_tb/status
       gui_sg_addsignal -group music_melody_Group  /music_melody_tb/music_melody_synth_inst/bmg_port/CLKA
       gui_sg_addsignal -group music_melody_Group  /music_melody_tb/music_melody_synth_inst/bmg_port/ADDRA
-      gui_sg_addsignal -group music_melody_Group  /music_melody_tb/music_melody_synth_inst/bmg_port/ENA
       gui_sg_addsignal -group music_melody_Group  /music_melody_tb/music_melody_synth_inst/bmg_port/DOUTA
 
 gui_zoom -window Wave.1 -full

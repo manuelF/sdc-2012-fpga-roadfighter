@@ -1,13 +1,13 @@
 //! **************************************************************************
-// Written by: Map P.28xd on Mon Jul 29 18:35:20 2013
+// Written by: Map P.28xd on Fri Aug 02 18:56:35 2013
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "clk" LOCATE = SITE "C9" LEVEL 1;
-COMP "left" LOCATE = SITE "A6" LEVEL 1;
+COMP "left" LOCATE = SITE "B6" LEVEL 1;
 COMP "speaker_bass" LOCATE = SITE "E8" LEVEL 1;
 COMP "hsync" LOCATE = SITE "F15" LEVEL 1;
-COMP "right" LOCATE = SITE "B6" LEVEL 1;
+COMP "right" LOCATE = SITE "A6" LEVEL 1;
 COMP "start" LOCATE = SITE "E7" LEVEL 1;
 COMP "vsync" LOCATE = SITE "F14" LEVEL 1;
 COMP "speaker_melody" LOCATE = SITE "F8" LEVEL 1;

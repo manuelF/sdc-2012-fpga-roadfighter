@@ -38,34 +38,32 @@
 
 module music_melody(
   clka,
-  ena,
   addra,
   douta
 );
 
 input clka;
-input ena;
-input [7 : 0] addra;
-output [15 : 0] douta;
+input [11 : 0] addra;
+output [7 : 0] douta;
 
 // synthesis translate_off
 
   BLK_MEM_GEN_V7_2 #(
-    .C_ADDRA_WIDTH(8),
-    .C_ADDRB_WIDTH(8),
+    .C_ADDRA_WIDTH(12),
+    .C_ADDRB_WIDTH(12),
     .C_ALGORITHM(1),
     .C_AXI_ID_WIDTH(4),
     .C_AXI_SLAVE_TYPE(0),
     .C_AXI_TYPE(1),
     .C_BYTE_SIZE(9),
     .C_COMMON_CLK(0),
-    .C_DEFAULT_DATA("0"),
+    .C_DEFAULT_DATA("FF"),
     .C_DISABLE_WARN_BHV_COLL(0),
     .C_DISABLE_WARN_BHV_RANGE(0),
     .C_ENABLE_32BIT_ADDRESS(0),
     .C_FAMILY("spartan3"),
     .C_HAS_AXI_ID(0),
-    .C_HAS_ENA(1),
+    .C_HAS_ENA(0),
     .C_HAS_ENB(0),
     .C_HAS_INJECTERR(0),
     .C_HAS_MEM_OUTPUT_REGS_A(0),
@@ -86,10 +84,10 @@ output [15 : 0] douta;
     .C_MEM_TYPE(3),
     .C_MUX_PIPELINE_STAGES(0),
     .C_PRIM_TYPE(1),
-    .C_READ_DEPTH_A(256),
-    .C_READ_DEPTH_B(256),
-    .C_READ_WIDTH_A(16),
-    .C_READ_WIDTH_B(16),
+    .C_READ_DEPTH_A(2400),
+    .C_READ_DEPTH_B(2400),
+    .C_READ_WIDTH_A(8),
+    .C_READ_WIDTH_B(8),
     .C_RST_PRIORITY_A("CE"),
     .C_RST_PRIORITY_B("CE"),
     .C_RST_TYPE("SYNC"),
@@ -103,20 +101,20 @@ output [15 : 0] douta;
     .C_USE_SOFTECC(0),
     .C_WEA_WIDTH(1),
     .C_WEB_WIDTH(1),
-    .C_WRITE_DEPTH_A(256),
-    .C_WRITE_DEPTH_B(256),
+    .C_WRITE_DEPTH_A(2400),
+    .C_WRITE_DEPTH_B(2400),
     .C_WRITE_MODE_A("WRITE_FIRST"),
     .C_WRITE_MODE_B("WRITE_FIRST"),
-    .C_WRITE_WIDTH_A(16),
-    .C_WRITE_WIDTH_B(16),
+    .C_WRITE_WIDTH_A(8),
+    .C_WRITE_WIDTH_B(8),
     .C_XDEVICEFAMILY("spartan3e")
   )
   inst (
     .CLKA(clka),
-    .ENA(ena),
     .ADDRA(addra),
     .DOUTA(douta),
     .RSTA(),
+    .ENA(),
     .REGCEA(),
     .WEA(),
     .DINA(),
