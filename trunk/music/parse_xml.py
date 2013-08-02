@@ -1,5 +1,5 @@
 from xml.dom.minidom import parse
-import fpga2pysynth
+import fpga2pysynth,sys
 
 durations = {
 	"16th": 1,
@@ -9,37 +9,51 @@ durations = {
 	"whole": 16
 }
 
-def get(n,k): 
+def get_data(n,k): 
 	v = n.getElementsByTagName(k)
 	t = v[0].tagName if v else None
 	if not t: return None
 	return v[0].firstChild.data if v[0].firstChild else t
-
-def get_note_data(node):
-	note = get(node,"step") or ""
-	alter = "#" if get(node,"alter") else ""
-
-	octave = get(node,"octave")
-	octave = str(int(octave)+1) if octave else "r"
-
-	duration = durations[get(node,"type")]
-	dot = get(node,"dot")
-	if dot: duration += duration/2
 	
-	duration *= 4
+def get_child(n,k):
+	v = n.getElementsByTagName(k);
+	return v[0] if v else None
+	
+def get_note_data(node):
+	note = get_data(node,"step") or ""
+	alter = "#" if get_data(node,"alter") else ""
+
+	octave = get_data(node,"octave")
+	octave = octave if octave else "r"
+
+	duration = durations[get_data(node,"type")]
+	dot = get_data(node,"dot")
+	mods = get_child(node,"time-modification")
+	
+	num,denom = 1,1
+	if mods:
+		num = int(get_data(mods,"normal-notes"))
+		denom = int(get_data(mods,"actual-notes"))
+	
+	if dot: duration += duration/2
+	duration *= 12 #Para que podamos tener triplets
+	duration = (duration*num)/denom
 	duration -= 1
+
 	res = ""
 	res += (str(fpga2pysynth.encode_note(note.lower() + alter + octave)) + ",\n")*duration	
 	res += ("0,\n")
+
 	return res
 
-dom = parse("onlybass.xml")
-notes = dom.getElementsByTagName("note")
+if __name__ == "__main__":
+	dom = parse(sys.argv[1])
+	notes = dom.getElementsByTagName("note")
 
-res = ""
-res += "memory_initialization_radix=10;\n"
-res += "memory_initialization_vector=\n"
+	res = ""
+	res += "memory_initialization_radix=10;\n"
+	res += "memory_initialization_vector=\n"
 
-for note in notes[1:]:
-	res += get_note_data(note)
-print res[:-2] + ";"
+	for note in notes[1:]:
+		res += get_note_data(note)
+	print res[:-2] + ";"
