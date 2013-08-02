@@ -63,7 +63,7 @@ module music_handler (
 		if(counter_note==0)
 			begin
 				if(counter_octave==0)
-					counter_octave <= (octave==0?255:octave==1?127:octave==2?63:octave==3?31:octave==4?15:7);
+					counter_octave <= (octave==0?255:octave==1?127:octave==2?63:octave==3?31:octave==4?15:octave==5?7:3);
 				else
 					counter_octave <= counter_octave-1;
 			end
