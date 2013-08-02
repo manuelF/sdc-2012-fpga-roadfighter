@@ -86,7 +86,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1375290651" xil_pn:in_ck="689708171507649089" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-4106203833124657629" xil_pn:start_ts="1375290651">
+    <transform xil_pn:end_ts="1375473948" xil_pn:in_ck="689708171507649089" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-4106203833124657629" xil_pn:start_ts="1375473948">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -106,11 +106,13 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1375290667" xil_pn:in_ck="-5460538853337865354" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="345849261432618934" xil_pn:start_ts="1375290651">
+    <transform xil_pn:end_ts="1375473964" xil_pn:in_ck="-5460538853337865354" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="345849261432618934" xil_pn:start_ts="1375473948">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="rr_music.lso"/>
@@ -128,19 +130,20 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1375290675" xil_pn:in_ck="7621251625862543140" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="5200053997700858022" xil_pn:start_ts="1375290667">
+    <transform xil_pn:end_ts="1375473973" xil_pn:in_ck="7621251625862543140" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="5200053997700858022" xil_pn:start_ts="1375473964">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
       <outfile xil_pn:name="rr_music.bld"/>
       <outfile xil_pn:name="rr_music.ngd"/>
       <outfile xil_pn:name="rr_music_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1375290681" xil_pn:in_ck="-2704977176157356856" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-5849673150125579957" xil_pn:start_ts="1375290675">
+    <transform xil_pn:end_ts="1375473979" xil_pn:in_ck="-2704977176157356856" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-5849673150125579957" xil_pn:start_ts="1375473973">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
@@ -153,9 +156,10 @@
       <outfile xil_pn:name="rr_music_summary.xml"/>
       <outfile xil_pn:name="rr_music_usage.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1375290705" xil_pn:in_ck="2345551381948929" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-5563652517805085498" xil_pn:start_ts="1375290681">
+    <transform xil_pn:end_ts="1375474003" xil_pn:in_ck="2345551381948929" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-5563652517805085498" xil_pn:start_ts="1375473979">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
       <outfile xil_pn:name="rr_music.ncd"/>
       <outfile xil_pn:name="rr_music.pad"/>
@@ -167,10 +171,10 @@
       <outfile xil_pn:name="rr_music_pad.txt"/>
       <outfile xil_pn:name="rr_music_par.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1375290721" xil_pn:in_ck="5940967675547621575" xil_pn:name="TRANEXT_bitFile_spartan3e" xil_pn:prop_ck="-7817169320884990698" xil_pn:start_ts="1375290705">
+    <transform xil_pn:end_ts="1375474019" xil_pn:in_ck="5940967675547621575" xil_pn:name="TRANEXT_bitFile_spartan3e" xil_pn:prop_ck="-7817169320884990698" xil_pn:start_ts="1375474003">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="rr_music.bgn"/>
       <outfile xil_pn:name="rr_music.bit"/>
@@ -184,11 +188,15 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
     </transform>
-    <transform xil_pn:end_ts="1375290705" xil_pn:in_ck="-14539269796510268" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1375290701">
-      <status xil_pn:value="SuccessfullyRun"/>
+    <transform xil_pn:end_ts="1375473410" xil_pn:in_ck="-14539269796510268" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1375473406">
+      <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
       <outfile xil_pn:name="rr_music.twr"/>
       <outfile xil_pn:name="rr_music.twx"/>
