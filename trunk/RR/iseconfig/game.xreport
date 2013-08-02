@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="1.7" >
  <header>
-  <DateModified>2013-08-01T03:34:28</DateModified>
+  <DateModified>2013-08-02T17:11:15</DateModified>
   <ModuleName>game</ModuleName>
-  <SummaryTimeStamp>2013-08-01T03:29:54</SummaryTimeStamp>
+  <SummaryTimeStamp>2013-08-02T16:42:05</SummaryTimeStamp>
   <DateInitialized>2012-08-02T23:42:53</DateInitialized>
   <ImplementationReportsDirectory>C:/Users/Mainframe 3/fpga/RR\</ImplementationReportsDirectory>
   <SavedFilePath>C:/Users/Mainframe 3/fpga/RR/iseconfig/game.xreport</SavedFilePath>
