@@ -4,7 +4,9 @@ import fpga2pysynth
 durations = {
 	"16th": 1,
 	"eighth": 2,
-	"quarter": 4
+	"quarter": 4,
+	"half": 8,
+	"whole": 16
 }
 
 def get(n,k): 
