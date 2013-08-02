@@ -1,6 +1,5 @@
 import re
 import sys
-import pysynth_b
 
 note_names = ["a","a#","b","c","c#","d","d#","e","f","f#","g","g#"]
 def decode_note(value):
@@ -49,6 +48,8 @@ def parse(original):
 	return notes
 
 if __name__=='__main__':
+	import pysynth_b
+
 	notes = parse(sys.stdin.readlines())
 	pysynth_b.make_wav(tuple(notes),fn="test.wav",bpm=190)
 
