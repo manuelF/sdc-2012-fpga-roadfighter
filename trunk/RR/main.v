@@ -22,7 +22,7 @@ module main(
     input wire clk, reset,
 	 input wire drop,
 	 input wire left, right,
-	 input wire upsig, upsig_fast, alive,	 
+	 input wire upsig, upsig_fast, alive, started,
     output wire hsync, vsync,
     output wire [2:0] rgb,
 	 output wire [7:0] initial_dbg,
@@ -195,6 +195,7 @@ module main(
 		.clock(clk),
 		.speaker_b(speaker_bass),
 		.speaker_m(speaker_melody),
-		.enabled(alive), .reset(reset)
+		.reset(reset), .colision(colision),
+		.started(started)
     );
 endmodule

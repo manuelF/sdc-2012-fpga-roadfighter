@@ -201,7 +201,8 @@ module game(
 		.drop((drop_reg >= dropsync_reg) & ~colision & start_reg),  .alive(~colision & start_reg),
 		.left(go_left), .right(go_right),					
 		.hsync(hsync), .vsync(vsync), .rgb(rgb_out), .colision(colision),
-		.speaker_bass(speaker_bass), .speaker_melody(speaker_melody)
+		.speaker_bass(speaker_bass), .speaker_melody(speaker_melody),
+		.started(start_reg)
 	);
 				
 endmodule
