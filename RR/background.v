@@ -56,7 +56,7 @@ module background(
 	
 	//Rio de agua que se mueve.
 	reg [2:0] rgb_water;
-	wire on_water;
+	wire on_water, on_foam;
 
 	river_drawer river (
 		.pixel_x(pixel_x),
@@ -64,14 +64,15 @@ module background(
 		.clk(clk),
 		.update_signal(update_signal),
 		.is_on(on_water),
-		.reset(reset)
+		.reset(reset),
+		.is_on_foam(on_foam)
 	);
 	
 	always@*
 	begin
 		case ( pixel_x[9:8] )
 			2'b00: // Primera parte del fondo
-				if(pixel_x >= 10'b0011111000)
+				if((pixel_x >= 10'b0011111000) || on_foam)
 					rgb = BLANCO;
 				else if(on_water)
 					rgb = AZUL;

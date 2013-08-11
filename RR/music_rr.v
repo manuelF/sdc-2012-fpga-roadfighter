@@ -3,11 +3,17 @@
 module rr_music(
 		input clock,
 		input reset,
+		input colision,
+		input started,
+		output loser,
 		output speaker_b,
 		output speaker_m,
-		input enabled
+		output bpm_tick
     );
 
+	wire enabled;
+	assign enabled = ~colision & started;
+	
 	wire [7:0] fullnote_bass;
 	wire speaker_bass;
 
@@ -20,9 +26,9 @@ module rr_music(
 		
 	wire update; 
 	assign update = enabled & ~reset;
-	
+
 	always @(posedge clock)
-		if(update)
+		if(started)
 			if(bpm_counter_reg == BPMTOP) begin
 				bpm_counter_reg <= 0;
 				bpm_tick_reg <= 1;
@@ -35,7 +41,6 @@ module rr_music(
 			bpm_tick_reg <= 0;
 		end
 
-	wire bpm_tick;
 	assign bpm_tick = bpm_tick_reg;
 	
 	reg [11:0] tone_bass;
@@ -73,9 +78,7 @@ module rr_music(
 	music_handler notes_bass( .clk(clock), 
 		.fullnote(fullnote_bass), 
 		.speaker(speaker_bass) );
-	
-	assign speaker_b = enabled & speaker_bass;
-		
+			
 	//----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 	music_melody musicbox_melody (
 	  .clka(clock), // input clka
@@ -87,8 +90,41 @@ module rr_music(
 	music_handler notes_melody( .clk(clock), 
 		.fullnote(fullnote_melody), 
 		.speaker(speaker_melody) );
+
+	//MUSICA DE PERDER
+
+	reg [7:0] loser_music_reg;
+	wire [7:0] loser_music;
+
+	localparam LOSER_MUSIC_LIMIT = 3*12+11;
+	wire speaker_lost; 
 		
-	assign speaker_m = enabled & speaker_melody;
+	reg [5:0] note_counter;
+	always @(posedge clock, posedge reset)
+		if(reset) begin
+			loser_music_reg <= LOSER_MUSIC_LIMIT;
+			note_counter <= 12;
+		end else begin
+			if(loser)
+				if(bpm_tick)
+					if(note_counter == 0) begin
+						note_counter <= 12;
+						if (loser_music > 2*12+11)
+							loser_music_reg <= loser_music - 1;
+						else
+							loser_music_reg <= 0;
+					end else
+						note_counter <= note_counter-1;
+		end
+
+	assign loser = (colision & started);
+	assign loser_music = loser_music_reg;
+	
+	music_handler notes_loser( .clk(clock), 
+		.fullnote(loser_music), 
+		.speaker(speaker_lost) );
+		
+	assign speaker_b = (enabled & speaker_bass) | (loser & speaker_lost);
+	assign speaker_m = (enabled & speaker_melody) | (loser & speaker_lost);
 
 endmodule
-
